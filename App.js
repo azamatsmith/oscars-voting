@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect, Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from 'src/reducers';
 import Landing from 'src/screens/Landing';
 
 
-class Main extends React.Component {
+class App extends Component {
   render() {
     const store = createStore(rootReducer);
     return (
@@ -16,4 +16,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main
+export default App;
