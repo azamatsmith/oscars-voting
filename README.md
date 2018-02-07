@@ -1,3 +1,12 @@
+## Getting Started
+
+  1. Run `yarn install` or `npm install` in the project directory
+  2. Run `yarn start` or `npm run start`
+  3. When the package finishes building and a dialog appears, press `i` to start the `iOS` emulator.
+        
+
+___ 
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
