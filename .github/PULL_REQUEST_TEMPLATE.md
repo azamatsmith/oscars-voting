@@ -15,3 +15,4 @@ Add a quick note about the motivation for this change.
 Add any additional notes or screenshots here.
 
 
+Note: Please Run Prettier: `yarn format` or `npm run format` prior to submitting PR.
