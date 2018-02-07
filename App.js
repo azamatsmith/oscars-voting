@@ -12,7 +12,7 @@ const store = createStore(
   applyMiddleware(middleware),
 );
 
-class ReduxExampleApp extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
@@ -22,7 +22,5 @@ class ReduxExampleApp extends React.Component {
   }
 }
 
-AppRegistry.registerComponent('ReduxExample', () => ReduxExampleApp);
-
-export default ReduxExampleApp;
+export default App;
 
