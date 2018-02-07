@@ -1,19 +1,28 @@
-import React, { Component } from 'react';
-import { connect, Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from 'src/reducers';
-import Landing from 'src/screens/Landing';
+import React from 'react';
+import { AppRegistry } from 'react-native';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 
+import rootReducer from './src/reducers';
+import AppWithNavigationState from './src/navigators';
+import { middleware } from './src/utils/redux';
 
-class App extends Component {
+const store = createStore(
+  rootReducer,
+  applyMiddleware(middleware),
+);
+
+class ReduxExampleApp extends React.Component {
   render() {
-    const store = createStore(rootReducer);
     return (
       <Provider store={store}>
-        <Landing />
+        <AppWithNavigationState />
       </Provider>
     );
   }
 }
 
-export default App;
+AppRegistry.registerComponent('ReduxExample', () => ReduxExampleApp);
+
+export default ReduxExampleApp;
+
