@@ -1,11 +1,21 @@
 ## Getting Started
 
-  1. Run `yarn install` or `npm install` in the project directory
-  2. Run `yarn start` or `npm run start`
-  3. When the package finishes building and a dialog appears, press `i` to start the `iOS` emulator.
-        
+1. Add a `env.js` to your root directory`
+2. It should contain the `env` variables that will be used throughout the app and look like this:
 
-___ 
+
+```
+module.exports = () => {
+  // ADD ENV VARS HERE
+  process.env.SOME_API_KEY = 'SECRET';
+};
+```
+
+3. Run `yarn install` or `npm install` in the project directory
+4. Run `yarn start` or `npm run start`
+5. When the package finishes building and a dialog appears, press `i` to start the `iOS` emulator.
+
+---
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
@@ -93,6 +103,7 @@ REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname' npm start
 ```
 
 Windows:
+
 ```
 set REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname'
 npm start
