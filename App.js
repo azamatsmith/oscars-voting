@@ -24,6 +24,7 @@ class App extends React.Component {
 
   componentDidMount() {
     BackHandler.addEventListener('hardwareBackPress', this._onBackPress);
+
     // make sure not to initialize firebase apps more than once
     if (firebase.apps.length > 0) {
       return;
@@ -37,8 +38,23 @@ class App extends React.Component {
       storageBucket: '',
       messagingSenderId: '695218268092',
     };
+
     firebase.initializeApp(config);
   }
+
+  componentWillUnmount()  {
+    BackHandler.removeEventListener('hardwareBackPress', this._onBackPress);
+  }
+
+  _onBackPress = () => {
+    const {dispatch, nav} = this.props;
+    // nav.index 0 means you are at the bottom of the navigation stack
+    if (nav.index === 0) {
+      return false;
+    }
+    dispatch(NavigationActions.back());
+    return true;
+  };
 }
 
 export default App;
