@@ -24,10 +24,10 @@ export default class CategoryItem extends React.Component {
 const styles = StyleSheet.create({
   container: {
     padding: 12,
+    paddingHorizontal: 16,
     justifyContent: 'center',
   },
   text: {
-    color: 'black',
-    fontSize: 14,
+    fontSize: 16,
   },
 });

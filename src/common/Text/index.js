@@ -5,11 +5,11 @@ import { StyleSheet, Text } from 'react-native';
 export default class AppText extends React.Component {
   static propTypes = {
     children: PropTypes.any,
-    style: PropTypes.object,
+    style: PropTypes.any,
   };
 
   static defaultProps = {
-    style: null,
+    style: {},
   };
 
   render() {

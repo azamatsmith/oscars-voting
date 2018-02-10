@@ -5,6 +5,10 @@ import { categories } from 'src/utils/data';
 import CategoryItem from './components/CategoryItem';
 
 export default class LandingScreen extends Component {
+  static navigationOptions = {
+    title: 'Oscars Voting - 2018',
+  };
+
   static propTypes = {};
   static defaultProps = {};
 
