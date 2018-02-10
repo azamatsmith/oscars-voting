@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, TouchableOpacity, Text, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import { Text } from 'src/common';
 
 export default class CategoryItem extends React.Component {
   static propTypes = {
