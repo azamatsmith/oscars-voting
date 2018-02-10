@@ -6,8 +6,11 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case '':
-      return state;
+    case 'APPEND_DATA':
+      return {
+        ...state,
+        categoryData: state.categoryData.concat(action.data),
+      };
     default:
       return state;
   }
