@@ -2,7 +2,7 @@
 // for the main container of each screen.
 import React from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 export default class MainView extends React.Component {
   static propTypes = {

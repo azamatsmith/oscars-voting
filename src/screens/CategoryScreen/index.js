@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {View} from 'react-native';
-import {MainView, Text} from 'src/common';
+import { View } from 'react-native';
+import { MainView, Text } from 'src/common';
 
 export default class CategoryScreen extends React.Component {
-  static navigationOptions = ({navigation, navigationOptions}) => {
-    const {params} = navigation.state;
-    console.log('params: ', params);
+  static navigationOptions = ({ navigation, navigationOptions }) => {
+    const { params } = navigation.state;
     return {
-      title: 'test',
+      title: params.category,
     };
   };
 
@@ -19,7 +18,7 @@ export default class CategoryScreen extends React.Component {
   render() {
     return (
       <MainView>
-        <Text>hi</Text>
+        <Text>Placeholder</Text>
       </MainView>
     );
   }
