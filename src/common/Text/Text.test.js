@@ -9,7 +9,3 @@ describe('<Text />', () => {
     expect(rendered).toBeTruthy();
   });
 });
-
-
-
-
