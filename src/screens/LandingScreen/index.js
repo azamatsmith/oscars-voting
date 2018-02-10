@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {categories} from 'src/utils/data';
+import CategoryItem from './components/CategoryItem';
 
 export default class LandingScreen extends Component {
   static propTypes = {};
@@ -9,9 +10,11 @@ export default class LandingScreen extends Component {
 
   // PRIVATE
 
-  _renderItem = ({item}) => {
-    return <Text style={styles.text}>{item.category}</Text>;
-  };
+  _renderItem = ({item}) => (
+    // MTS - Destructuring item makes a prop for each object property
+    // and passes it into the component
+    <CategoryItem {...item} />
+  );
 
   render() {
     return (
