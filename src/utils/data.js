@@ -1,0 +1,37 @@
+export const categories = [
+  { category: 'Best Picture' },
+  { category: 'Actor in a Leading Role' },
+  { category: 'Actress in a Leading Role' },
+  { category: 'Actor in a Supporting Role' },
+  { category: 'Animated Feature Film' },
+  { category: 'Cinematography' },
+  { category: 'Costume Design' },
+  { category: 'Directing' },
+  { category: 'Documentary (Feature)' },
+  { category: 'Documentary (Short Subject)' },
+  { category: 'Film Editing' },
+  { category: 'Foreign Language Film' },
+  { category: 'Makeup and Hairstyling' },
+  { category: 'Music (Original Score)' },
+  { category: 'Music (Original Song)' },
+  { category: 'Production Design' },
+  { category: 'Short Film (Animated)' },
+  { category: 'Short Film (Live Action)' },
+  { category: 'Sound Editing' },
+  { category: 'Sound Mixing' },
+  { category: 'Writing (Adapted Screenplay)' },
+  { category: 'Writing (Original Screenplay)' },
+];
+
+// These are IMDB ids
+export const movies = [
+  { id: 'tt5726616', name: 'Call Me by Your Name' },
+  { id: 'tt4555426', name: 'Darkest Hour' },
+  { id: 'tt5013056', name: 'Dunkirk' },
+  { id: 'tt5052448', name: 'Get Out' },
+  { id: 'tt4925292', name: 'Lady Bird' },
+  { id: 'tt5776858', name: 'Phantom Thread' },
+  { id: 'tt6294822', name: 'The Post' },
+  { id: 'tt5580390', name: 'The Shape of Water' },
+  { id: 'tt5027774', name: 'Three Billboards outside Ebbing, Missouri' },
+];

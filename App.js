@@ -1,17 +1,21 @@
 import React from 'react';
-import { AppRegistry, BackHandler } from 'react-native';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+
+import {AppRegistry, BackHandler} from 'react-native';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
 import firebase from 'firebase';
 
 import rootReducer from './src/reducers';
 import AppWithNavigationState from './src/navigators';
-import { middleware } from './src/utils/redux';
+import {middleware} from './src/utils/redux';
 
-const store = createStore(
-  rootReducer,
-  applyMiddleware(middleware),
-);
+// Set Env variables
+if (process.env.NODE_ENV !== 'test') {
+  const env = require('./env.js');
+  env();
+}
+
+const store = createStore(rootReducer, applyMiddleware(middleware));
 
 class App extends React.Component {
   render() {
@@ -29,7 +33,7 @@ class App extends React.Component {
     if (firebase.apps.length > 0) {
       return;
     }
-    
+
     const config = {
       apiKey: process.env.API_KEY,
       authDomain: 'oscars-29f50.firebaseapp.com',
@@ -42,7 +46,7 @@ class App extends React.Component {
     firebase.initializeApp(config);
   }
 
-  componentWillUnmount()  {
+  componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this._onBackPress);
   }
 
@@ -58,4 +62,3 @@ class App extends React.Component {
 }
 
 export default App;
-
