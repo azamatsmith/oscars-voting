@@ -15,10 +15,15 @@ export default class LandingScreen extends Component {
 
   // PRIVATE
 
+  _navigate = ({category, id}) => {
+    const {navigation} = this.props;
+    navigation.navigate('CategoryScreen', {category, id});
+  };
+
   _renderItem = ({item}) => (
     // MTS - Destructuring item makes a prop for each object property
     // and passes it into the component
-    <CategoryItem {...item} />
+    <CategoryItem {...item} onPress={() => this._navigate(item)} />
   );
 
   render() {

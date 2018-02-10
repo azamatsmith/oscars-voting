@@ -7,22 +7,17 @@ export default class CategoryItem extends React.Component {
   static propTypes = {
     category: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
+    onPress: PropTypes.func.isRequired,
   };
 
   static defaultProps = {};
 
-  // PRIVATE
-
-  _navigate = () => {
-    const {category, id, navigation} = this.props;
-    navigation.navigate('CategoryScreen', {category, id});
-  };
-
   render() {
+    const {category, onPress} = this.props;
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={this._navigate}>
-          <Text style={styles.text}>{this.props.category}</Text>
+        <TouchableOpacity onPress={onPress}>
+          <Text style={styles.text}>{category}</Text>
         </TouchableOpacity>
       </View>
     );
