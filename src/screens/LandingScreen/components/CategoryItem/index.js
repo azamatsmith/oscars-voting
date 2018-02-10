@@ -6,6 +6,7 @@ import {Text} from 'src/common';
 export default class CategoryItem extends React.Component {
   static propTypes = {
     category: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired
   };
 
   static defaultProps = {};
@@ -13,7 +14,8 @@ export default class CategoryItem extends React.Component {
   // PRIVATE
 
   _navigate = () => {
-    console.log('need to navigate', this.props);
+    const { category, id, navigation } = this.props;
+    navigation.navigate('CategoryScreen', { category, id });
   };
 
   render() {
