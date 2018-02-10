@@ -14,7 +14,6 @@ export const AppNavigator = StackNavigator(
     LandingScreen: { screen: LandingScreen },
   },
   {
-
     navigationOptions: {
       headerStyle: {
         backgroundColor: '#6b52ae',
