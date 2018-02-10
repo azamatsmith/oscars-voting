@@ -9,11 +9,23 @@ import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 import LandingScreen from '../screens/LandingScreen';
 import { addListener } from '../utils/redux';
 
-export const AppNavigator = StackNavigator({
-  LandingScreen: { screen: LandingScreen },
-  // Main: { screen: MainScreen },
-  // Profile: { screen: ProfileScreen },
-});
+export const AppNavigator = StackNavigator(
+  {
+    LandingScreen: { screen: LandingScreen },
+  },
+  {
+
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#6b52ae',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
+  }
+);
 
 class AppWithNavigationState extends React.Component {
   static propTypes = {
