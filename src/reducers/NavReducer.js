@@ -2,7 +2,7 @@
 import { AppNavigator } from '../navigators';
 
 const initialState = AppNavigator.router.getStateForAction(
-  AppNavigator.router.getActionForPathAndParams('LandingScreen')
+  AppNavigator.router.getActionForPathAndParams('GroupJoinCreateScreen')
 );
 
 export default (state = initialState, action) => {
