@@ -12,6 +12,7 @@ export const fetchCategoryData = id => dispatch => {
 
   // TODO: Remove this once all items have data
   if (!items) {
+    // eslint-disable-next-line
     return console.error('no items to fetch');
   }
 
@@ -23,6 +24,9 @@ export const fetchCategoryData = id => dispatch => {
       .then(({ data }) => {
         dispatch({ type: 'APPEND_DATA', data });
       })
-      .catch(err => console.log('could not get data for ', item));
+      .catch(err => {
+        // eslint-disable-next-line
+        console.log(err, 'could not get data for ', item);
+      });
   });
 };

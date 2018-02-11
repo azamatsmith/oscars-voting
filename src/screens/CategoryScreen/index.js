@@ -14,7 +14,17 @@ class CategoryScreen extends React.Component {
     };
   };
 
-  static propTypes = {};
+  static propTypes = {
+    categoryData: PropTypes.array,
+    fetchCategoryData: PropTypes.func.isRequired,
+    navigation: PropTypes.shape({
+      state: PropTypes.shape({
+        params: PropTypes.shape({
+          id: PropTypes.string,
+        }),
+      }),
+    }).isRequired,
+  };
 
   static defaultProps = {};
 

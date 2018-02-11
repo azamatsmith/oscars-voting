@@ -10,7 +10,11 @@ export default class LandingScreen extends Component {
     title: 'Oscars Voting - 2018',
   };
 
-  static propTypes = {};
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+    }),
+  };
   static defaultProps = {};
 
   // PRIVATE

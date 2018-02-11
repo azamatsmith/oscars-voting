@@ -7,7 +7,6 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'CLEAR_DATA':
-      console.log('clearing data');
       return { ...state, categoryData: [] };
 
     case 'APPEND_DATA':

@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jest": true,
+    "node": true,
+  },
+  "plugins": ["react", "react-native"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "rules": {
+    // overrides
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react-native/no-inline-styles": 0,
+    "react-native/no-color-literals": 0,
+    "no-undef": 2,
+    "no-unused-vars": ["warn", {"args": "none"}],
+    "quotes": "off"
+  },
+}

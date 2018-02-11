@@ -6,11 +6,13 @@ import { StyleSheet, TouchableHighlight } from 'react-native';
 export default class Button extends React.Component {
   static propTypes = {
     children: PropTypes.any,
+    style: PropTypes.object,
     text: PropTypes.string,
   };
 
   static defaultProps = {
     children: null,
+    style: {},
     text: null,
   };
 
