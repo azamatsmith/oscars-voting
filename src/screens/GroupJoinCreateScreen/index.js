@@ -50,11 +50,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  textStyle: {
-    textSize: 20,
-  },
-
   buttonStyle: {
-    borderWidth: '1',
+    borderWidth: 1,
   },
 });
