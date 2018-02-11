@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { MainView, Button } from 'src/common';
 
 export default class GroupJoinCreateScreen extends Component {
-  
   static navigationOptions = {
     title: 'Oscars Voting - 2018',
   };
@@ -15,15 +14,25 @@ export default class GroupJoinCreateScreen extends Component {
   _navigate = ({ newGroup }) => {
     const { navigation } = this.props;
     //Will Navigate to a new screen in after implemented
-    newGroup ? navigation.navigate('LandingScreen') : navigation.navigate('LandingScreen');
+    newGroup
+      ? navigation.navigate('LandingScreen')
+      : navigation.navigate('LandingScreen');
   };
 
   render() {
     return (
-      <MainView >
+      <MainView>
         <View style={styles.groupViewStyle}>
-          <Button text="Create Group" style={styles.buttonStyle} onPress={() => this._navigate(true)}/>
-          <Button text="Join Group" style={styles.buttonStyle} onPress={() => this._navigate(false)}/>
+          <Button
+            text="Create Group"
+            style={styles.buttonStyle}
+            onPress={() => this._navigate(true)}
+          />
+          <Button
+            text="Join Group"
+            style={styles.buttonStyle}
+            onPress={() => this._navigate(false)}
+          />
         </View>
       </MainView>
     );
@@ -38,14 +47,14 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   textStyle: {
-    textSize: 20
+    textSize: 20,
   },
 
   buttonStyle: {
-    borderWidth: '1'
-  }
+    borderWidth: '1',
+  },
 });

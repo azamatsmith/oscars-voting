@@ -13,7 +13,7 @@ export const AppNavigator = StackNavigator(
   {
     GroupJoinCreateScreen: { screen: GroupJoinCreateScreen },
     CategoryScreen: { screen: CategoryScreen },
-    LandingScreen: { screen: LandingScreen }
+    LandingScreen: { screen: LandingScreen },
   },
   {
     navigationOptions: {
