@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {View} from 'react-native';
-import {MainView, Text} from 'src/common';
+import {StyleSheet, View} from 'react-native';
+import {Button, MainView, Text} from 'src/common';
 import {connect} from 'react-redux';
 import {fetchCategoryData} from 'src/actions';
 import ImageSection from './components/ImageSection';
@@ -30,13 +30,23 @@ class CategoryScreen extends React.Component {
   // PRIVATE
 
   _renderItem = () => {
-    console.log('this.props', this.props);
     const itemData = this.props.categoryData[this.state.selectedItemIndex];
-    console.log('itemData', itemData);
     return (
       <View style={{flex: 1}}>
         <ImageSection source={itemData.Poster} />
-        <Text>{itemData.title}</Text>
+        <Text
+          style={{
+            fontSize: 22,
+            flex: 1,
+            paddingTop: 20,
+            textAlign: 'center',
+          }}>
+          {itemData.Title}
+        </Text>
+        <View style={styles.buttonRow}>
+          <Button text="<" onPress={() => console.log('prev')} />
+          <Button text=">" onPress={() => console.log('next')} />
+        </View>
       </View>
     );
   };
@@ -53,6 +63,12 @@ class CategoryScreen extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  buttonRow: {
+    flexDirection: 'row',
+  },
+});
 
 const mapStateToProps = ({categoryData}) => ({
   categoryData: categoryData.categoryData,
