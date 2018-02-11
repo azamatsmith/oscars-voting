@@ -1,5 +1,5 @@
 import React from 'react';
-import {CategoryScreen} from './';
+import { CategoryScreen } from './';
 
 import renderer from 'react-test-renderer';
 

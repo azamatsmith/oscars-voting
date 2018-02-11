@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import CategoryDataReducer from './CategoryDataReducer';
 import NavReducer from './NavReducer';
 
