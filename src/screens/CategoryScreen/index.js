@@ -29,10 +29,24 @@ class CategoryScreen extends React.Component {
 
   // PRIVATE
 
+  _handleCycle = direction => {
+    const {categoryData} = this.props;
+    const {selectedItemIndex} = this.state;
+    if (selectedItemIndex === 0 && direction === -1) {
+      return null;
+    }
+    if (selectedItemIndex === categoryData.length - 1 && direction === 1) {
+      return null;
+    }
+    return this.setState({
+      selectedItemIndex: selectedItemIndex + direction,
+    });
+  };
+
   _renderItem = () => {
     const itemData = this.props.categoryData[this.state.selectedItemIndex];
     return (
-      <View style={{flex: 1}}>
+      <View>
         <ImageSection source={itemData.Poster} />
         <Text
           style={{
@@ -44,8 +58,8 @@ class CategoryScreen extends React.Component {
           {itemData.Title}
         </Text>
         <View style={styles.buttonRow}>
-          <Button text="<" onPress={() => console.log('prev')} />
-          <Button text=">" onPress={() => console.log('next')} />
+          <Button text="Prev" onPress={() => this._handleCycle(-1)} />
+          <Button text="Next" onPress={() => this._handleCycle(1)} />
         </View>
       </View>
     );
@@ -64,8 +78,12 @@ class CategoryScreen extends React.Component {
   }
 }
 
+// Export class so that you do not have to mount redux store in tests
+export {CategoryScreen};
+
 const styles = StyleSheet.create({
   buttonRow: {
+    justifyContent: 'space-around',
     flexDirection: 'row',
   },
 });

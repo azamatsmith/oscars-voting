@@ -11,7 +11,7 @@ export default class ImageSection extends React.Component {
 
   render() {
     return (
-      <View style={{paddingTop: 20}}>
+      <View>
         <Image source={{uri: this.props.source}} style={{height: 300}} />
       </View>
     );
