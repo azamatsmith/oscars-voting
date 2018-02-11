@@ -1,20 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View } from 'react-native';
-import { Button, MainView, Text } from 'src/common';
-import { connect } from 'react-redux';
-import { fetchCategoryData } from 'src/actions';
+import {StyleSheet, View} from 'react-native';
+import {Button, MainView, Text} from 'src/common';
+import {connect} from 'react-redux';
+import {fetchCategoryData} from 'src/actions';
 import ImageSection from './components/ImageSection';
 
 class CategoryScreen extends React.Component {
-  static navigationOptions = ({ navigation, navigationOptions }) => {
-    const { params } = navigation.state;
+  static navigationOptions = ({navigation, navigationOptions}) => {
+    const {params} = navigation.state;
     return {
       title: params.category,
     };
   };
 
-  static propTypes = {};
+  static propTypes = {
+    categoryData: PropTypes.array,
+    fetchCategoryData: PropTypes.func.isRequired,
+    navigation: PropTypes.shape({
+      state: PropTypes.shape({
+        params: PropTypes.shape({
+          id: PropTypes.string,
+        }),
+      }),
+    }).isRequired,
+  };
 
   static defaultProps = {};
 
@@ -23,15 +33,15 @@ class CategoryScreen extends React.Component {
   };
 
   componentDidMount() {
-    const { id } = this.props.navigation.state.params;
+    const {id} = this.props.navigation.state.params;
     this.props.fetchCategoryData(id);
   }
 
   // PRIVATE
 
   _handleCycle = direction => {
-    const { categoryData } = this.props;
-    const { selectedItemIndex } = this.state;
+    const {categoryData} = this.props;
+    const {selectedItemIndex} = this.state;
     if (selectedItemIndex === 0 && direction === -1) {
       return null;
     }
@@ -54,8 +64,7 @@ class CategoryScreen extends React.Component {
             flex: 1,
             paddingTop: 20,
             textAlign: 'center',
-          }}
-        >
+          }}>
           {itemData.Title}
         </Text>
         <View style={styles.buttonRow}>
@@ -80,7 +89,7 @@ class CategoryScreen extends React.Component {
 }
 
 // Export class so that you do not have to mount redux store in tests
-export { CategoryScreen };
+export {CategoryScreen};
 
 const styles = StyleSheet.create({
   buttonRow: {
@@ -89,8 +98,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = ({ categoryData }) => ({
+const mapStateToProps = ({categoryData}) => ({
   categoryData: categoryData.categoryData,
 });
 
-export default connect(mapStateToProps, { fetchCategoryData })(CategoryScreen);
+export default connect(mapStateToProps, {fetchCategoryData})(CategoryScreen);

@@ -1,6 +1,8 @@
 import React from 'react';
-import {AppRegistry, BackHandler} from 'react-native';
+import PropTypes from 'prop-types';
+import {BackHandler} from 'react-native';
 import {Provider} from 'react-redux';
+import {NavigationActions} from 'react-navigation';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import firebase from 'firebase';
@@ -18,13 +20,10 @@ if (process.env.NODE_ENV !== 'test') {
 const store = createStore(rootReducer, applyMiddleware(middleware, thunk));
 
 class App extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <AppWithNavigationState />
-      </Provider>
-    );
-  }
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    nav: PropTypes.object,
+  };
 
   componentDidMount() {
     BackHandler.addEventListener('hardwareBackPress', this._onBackPress);
@@ -59,6 +58,14 @@ class App extends React.Component {
     dispatch(NavigationActions.back());
     return true;
   };
+
+  render() {
+    return (
+      <Provider store={store}>
+        <AppWithNavigationState />
+      </Provider>
+    );
+  }
 }
 
 export default App;
