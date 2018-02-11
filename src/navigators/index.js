@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 
 // MTS - Add additional screens here
-// import LoginScreen from '../components/LoginScreen';
-// import MainScreen from '../components/MainScreen';
+import CategoryScreen from '../screens/CategoryScreen';
 import LandingScreen from '../screens/LandingScreen';
 import { addListener } from '../utils/redux';
 
 export const AppNavigator = StackNavigator(
   {
+    CategoryScreen: { screen: CategoryScreen },
     LandingScreen: { screen: LandingScreen },
   },
   {

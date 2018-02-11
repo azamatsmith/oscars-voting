@@ -9,8 +9,7 @@
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "format":
-      "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
+    "format": "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
     "start": "react-native-scripts start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
@@ -22,6 +21,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "expo": "^25.0.0",
     "firebase": "^4.9.1",
     "prettier": "^1.10.2",
@@ -30,6 +30,7 @@
     "react-navigation": "^1.0.0",
     "react-navigation-redux-helpers": "^1.0.1",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   }
 }

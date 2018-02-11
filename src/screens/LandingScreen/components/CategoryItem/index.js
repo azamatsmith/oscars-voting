@@ -6,15 +6,18 @@ import { Text } from 'src/common';
 export default class CategoryItem extends React.Component {
   static propTypes = {
     category: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    onPress: PropTypes.func.isRequired,
   };
 
   static defaultProps = {};
 
   render() {
+    const { category, onPress } = this.props;
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => console.log('pressed', this.props)}>
-          <Text style={styles.text}>{this.props.category}</Text>
+        <TouchableOpacity onPress={onPress}>
+          <Text style={styles.text}>{category}</Text>
         </TouchableOpacity>
       </View>
     );
