@@ -1,8 +1,8 @@
 import React from 'react';
-
 import {AppRegistry, BackHandler} from 'react-native';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
 import firebase from 'firebase';
 
 import rootReducer from './src/reducers';
@@ -15,7 +15,7 @@ if (process.env.NODE_ENV !== 'test') {
   env();
 }
 
-const store = createStore(rootReducer, applyMiddleware(middleware));
+const store = createStore(rootReducer, applyMiddleware(middleware, thunk));
 
 class App extends React.Component {
   render() {
