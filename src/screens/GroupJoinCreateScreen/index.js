@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, View} from 'react-native';
 import PropTypes from 'prop-types';
-import { MainView, Button } from 'src/common';
+import {MainView, Button} from 'src/common';
 
 export default class GroupJoinCreateScreen extends Component {
   static navigationOptions = {
     title: 'Oscars Voting - 2018',
   };
-  static propTypes = {};
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+    }).isRequired,
+  };
   static defaultProps = {};
 
   // PRIVATE
-  _navigate = ({ newGroup }) => {
-    const { navigation } = this.props;
+  _navigate = ({newGroup}) => {
+    const {navigation} = this.props;
     //Will Navigate to a new screen in after implemented
     newGroup
       ? navigation.navigate('LandingScreen')
@@ -40,7 +44,7 @@ export default class GroupJoinCreateScreen extends Component {
 }
 
 // Export class so that you do not have to mount redux store in tests
-export { GroupJoinCreateScreen };
+export {GroupJoinCreateScreen};
 
 const styles = StyleSheet.create({
   groupViewStyle: {

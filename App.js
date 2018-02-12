@@ -25,6 +25,10 @@ class App extends React.Component {
     nav: PropTypes.object,
   };
 
+  static defaultProps = {
+    dispatch: () => null,
+  };
+
   componentDidMount() {
     BackHandler.addEventListener('hardwareBackPress', this._onBackPress);
 
