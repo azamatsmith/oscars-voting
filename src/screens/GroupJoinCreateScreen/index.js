@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { MainView, Button } from 'src/common';
 
@@ -11,11 +11,11 @@ export default class GroupJoinCreateScreen extends Component {
   static defaultProps = {};
 
   // PRIVATE
-  _navigate = ({ newGroup }) => {
+  _navigate = newGroup => {
     const { navigation } = this.props;
     //Will Navigate to a new screen in after implemented
     newGroup
-      ? navigation.navigate('LandingScreen')
+      ? navigation.navigate('CreateGroupScreen')
       : navigation.navigate('LandingScreen');
   };
 
