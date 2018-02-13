@@ -19,7 +19,8 @@
     "lint:fix": "eslint . --ext .js --fix",
     "start": "react-native-scripts start",
     "test": "node node_modules/jest/bin/jest.js",
-    "test:watch": "node node_modules/jest/bin/jest.js --watch"
+    "test:watch": "node node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "jest && codecov"
   },
   "jest": {
     "preset": "jest-expo",
