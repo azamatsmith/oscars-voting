@@ -12,7 +12,8 @@
   "scripts": {
     "android": "react-native-scripts android",
     "eject": "react-native-scripts eject",
-    "format": "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
+    "format":
+      "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
     "ios": "react-native-scripts ios",
     "lint": "eslint .",
     "lint:fix": "eslint . --ext .js --fix",
@@ -21,7 +22,9 @@
     "test:watch": "node node_modules/jest/bin/jest.js --watch"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   },
   "dependencies": {
     "axios": "^0.17.1",
