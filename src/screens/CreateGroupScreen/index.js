@@ -14,7 +14,6 @@ export default class CreateGroupScreen extends Component {
   static defaultProps = {};
 
   // PRIVATE
-
   _randomGroupId() {
     return Math.floor(1000 + Math.random() * 9000);
   }
