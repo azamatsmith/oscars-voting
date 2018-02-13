@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/azamatsmith/oscars-voting/tree/master.svg?style=svg)](https://circleci.com/gh/azamatsmith/oscars-voting/tree/master)
+[![codecov](https://codecov.io/gh/azamatsmith/oscars-voting/branch/master/graph/badge.svg)](https://codecov.io/gh/azamatsmith/oscars-voting)
+
 ## Getting Started
 
 1. Add an `env.js` to your root directory`
