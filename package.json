@@ -9,6 +9,7 @@
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
+    "lint": "eslint .",
     "lint:fix": "eslint . --ext .js --fix",
     "format":
       "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
