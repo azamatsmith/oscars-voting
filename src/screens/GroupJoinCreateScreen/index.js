@@ -7,7 +7,12 @@ export default class GroupJoinCreateScreen extends Component {
   static navigationOptions = {
     title: 'Oscars Voting - 2018',
   };
-  static propTypes = {};
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+    }),
+  };
+
   static defaultProps = {};
 
   // PRIVATE
@@ -24,14 +29,14 @@ export default class GroupJoinCreateScreen extends Component {
       <MainView>
         <View style={styles.groupViewStyle}>
           <Button
-            text="Create Group"
-            style={styles.buttonStyle}
             onPress={() => this._navigate(true)}
+            style={styles.buttonStyle}
+            text="Create Group"
           />
           <Button
-            text="Join Group"
-            style={styles.buttonStyle}
             onPress={() => this._navigate(false)}
+            style={styles.buttonStyle}
+            text="Join Group"
           />
         </View>
       </MainView>

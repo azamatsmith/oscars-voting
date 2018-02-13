@@ -3,23 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "codecov": "^3.0.0",
     "jest-expo": "25.0.0",
     "react-native-scripts": "1.11.1",
     "react-test-renderer": "16.2.0"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "lint:fix": "eslint . --ext .js --fix",
-    "format": "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
+    "eject": "react-native-scripts eject",
+    "format":
+      "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
     "ios": "react-native-scripts ios",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --ext .js --fix",
+    "start": "react-native-scripts start",
     "test": "node node_modules/jest/bin/jest.js",
+    "test:coverage": "jest && codecov",
     "test:watch": "node node_modules/jest/bin/jest.js --watch"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   },
   "dependencies": {
     "axios": "^0.17.1",
