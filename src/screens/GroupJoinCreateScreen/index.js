@@ -10,7 +10,7 @@ export default class GroupJoinCreateScreen extends Component {
   static propTypes = {
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
-    })
+    }),
   };
 
   static defaultProps = {};
