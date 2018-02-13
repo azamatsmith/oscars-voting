@@ -19,7 +19,13 @@
     "react-native/no-inline-styles": 0,
     "react-native/no-color-literals": 0,
     "no-undef": 2,
-    "no-unused-vars": ["warn", {"args": "none"}],
-    "quotes": "off"
+    "no-unused-vars": ["error", {"args": "none"}],
+    "quotes": "off",
+    "react/jsx-sort-props": ["error", {
+      "shorthandLast": true,
+      "callbacksLast": true,
+      "reservedFirst": true, 
+    }],
+    "sort-vars": ["error", { "ignoreCase": true }],
   },
 }
