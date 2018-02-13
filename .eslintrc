@@ -22,8 +22,10 @@
     "no-unused-vars": ["error", {"args": "none"}],
     "quotes": "off",
     "react/jsx-sort-props": ["error", {
+      "shorthandLast": true,
       "callbacksLast": true,
       "reservedFirst": true, 
     }],
+    "sort-vars": ["error", { "ignoreCase": true }],
   },
 }
