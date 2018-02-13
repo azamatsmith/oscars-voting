@@ -21,8 +21,12 @@ const store = createStore(rootReducer, applyMiddleware(middleware, thunk));
 
 class App extends React.Component {
   static propTypes = {
-    dispatch: PropTypes.func.isRequired,
+    dispatch: PropTypes.func,
     nav: PropTypes.object,
+  };
+
+  static defaultProps = {
+    dispatch: () => null,
   };
 
   componentDidMount() {
