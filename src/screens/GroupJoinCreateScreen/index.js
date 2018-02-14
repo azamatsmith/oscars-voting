@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import {Button, Input, MainView} from 'src/common';
 
@@ -10,7 +10,7 @@ export default class GroupJoinCreateScreen extends Component {
   static propTypes = {
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
-    }).isRequired,
+    }),
   };
 
   static defaultProps = {};
@@ -35,14 +35,14 @@ export default class GroupJoinCreateScreen extends Component {
       <MainView>
         <View style={styles.groupViewStyle}>
           <Button
-            text="Create Group"
-            style={styles.buttonStyle}
             onPress={() => this._navigate(true)}
+            style={styles.buttonStyle}
+            text="Create Group"
           />
           <Button
-            text="Join Group"
-            style={styles.buttonStyle}
             onPress={() => this._navigate(false)}
+            style={styles.buttonStyle}
+            text="Join Group"
           />
         </View>
 

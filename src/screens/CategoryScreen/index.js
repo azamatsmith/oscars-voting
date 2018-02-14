@@ -69,8 +69,8 @@ class CategoryScreen extends React.Component {
           {itemData.Title}
         </Text>
         <View style={styles.buttonRow}>
-          <Button text="Prev" onPress={() => this._handleCycle(-1)} />
-          <Button text="Next" onPress={() => this._handleCycle(1)} />
+          <Button onPress={() => this._handleCycle(-1)} text="Prev" />
+          <Button onPress={() => this._handleCycle(1)} text="Next" />
         </View>
       </View>
     );
