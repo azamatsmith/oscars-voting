@@ -5,23 +5,25 @@ import { MainView, Text, Button } from 'src/common';
 import firebase from 'firebase';
 
 export default class CreateGroupScreen extends Component {
+
+  state = {userName:"", groupId:0, groupName:""}
+
   static navigationOptions = {
     title: 'Oscars Voting - 2018',
   };
+
   static propTypes = {
     navigation: PropTypes.any,
   };
-  static defaultProps = {};
+
+  static defaultProps = {  };
 
   // PRIVATE
-  _randomGroupId() {
-    return Math.floor(1000 + Math.random() * 9000);
-  }
+  _randomGroupId = () => {return Math.floor(1000 + Math.random() * 9000)};
 
   //Method for firebase add group
-  _createGroup = (groupName, groupId, userName) => {
-    //Add group into firebase
-
+  _createGroup = () => {
+    
     var dbRef = firebase.database();
 
     //Get unique key for group
@@ -32,13 +34,13 @@ export default class CreateGroupScreen extends Component {
 
     //Create Group
     dbRef.ref('groups/' + groupKey).set({
-      name: groupName,
-      groupId: groupId,
+      name: this.groupName,
+      groupId: this._randomGroupId(),
     });
 
     //Create User
-    dbRef.ref('users/' + userName).set({
-      name: userName,
+    dbRef.ref('users/' + this.userName).set({
+      name: this.userName,
       admin: true,
       groupId: groupKey,
     });
@@ -51,11 +53,9 @@ export default class CreateGroupScreen extends Component {
           <Text> Create a new group. </Text>
           <Text> Enter group. </Text>
           <Button
-            text="Create Group"
+            onPress={() => this._createGroup()}
             style={styles.buttonStyle}
-            onPress={() =>
-              this._createGroup('Test', this._randomGroupId(), 'User 1')
-            }
+            text="Create Group"
           />
         </View>
       </MainView>
