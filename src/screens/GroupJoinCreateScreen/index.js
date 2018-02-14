@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
-import {Button, Input, MainView} from 'src/common';
+import { Button, Input, MainView } from 'src/common';
 
 export default class GroupJoinCreateScreen extends Component {
   static navigationOptions = {
@@ -15,11 +15,11 @@ export default class GroupJoinCreateScreen extends Component {
 
   static defaultProps = {};
 
-  state = {textValue: ''};
+  state = { textValue: '' };
 
   // PRIVATE
-  _navigate = ({newGroup}) => {
-    const {navigation} = this.props;
+  _navigate = ({ newGroup }) => {
+    const { navigation } = this.props;
     //Will Navigate to a new screen in after implemented
     newGroup
       ? navigation.navigate('LandingScreen')
@@ -27,7 +27,7 @@ export default class GroupJoinCreateScreen extends Component {
   };
 
   _onInputChange = textValue => {
-    this.setState({textValue});
+    this.setState({ textValue });
   };
 
   render() {
@@ -60,7 +60,7 @@ export default class GroupJoinCreateScreen extends Component {
 }
 
 // Export class so that you do not have to mount redux store in tests
-export {GroupJoinCreateScreen};
+export { GroupJoinCreateScreen };
 
 const styles = StyleSheet.create({
   groupViewStyle: {

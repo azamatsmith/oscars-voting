@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, TextInput, View} from 'react-native';
-import {Text} from 'src/common';
+import { StyleSheet, TextInput, View } from 'react-native';
+import { Text } from 'src/common';
 
 export default class Input extends React.Component {
   static propTypes = {
@@ -15,7 +15,7 @@ export default class Input extends React.Component {
   };
 
   render() {
-    const {label, ...rest} = this.props;
+    const { label, ...rest } = this.props;
     return (
       <View style={styles.container}>
         <Text>{label}</Text>
