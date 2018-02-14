@@ -47,11 +47,10 @@ export default class GroupJoinCreateScreen extends Component {
         </View>
 
         <Input
-          errorText="Some error"
-          label="Test Input"
+          errorText="There was an error"
+          label="Input Field"
           onChangeText={this._onInputChange}
-          placeholder="Test Placeholder"
-          secureTextEntry
+          placeholder="Type your text here"
           value={this.state.textValue}
         />
       </MainView>
@@ -68,5 +67,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+
+  buttonStyle: {
+    borderWidth: 1,
   },
 });
