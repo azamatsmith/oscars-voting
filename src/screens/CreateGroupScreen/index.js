@@ -6,7 +6,7 @@ import firebase from 'firebase';
 
 export default class CreateGroupScreen extends Component {
 
-  state = {userName:"", groupId:0, groupName:""}
+  state = {userName:"", groupName:""}
 
   static navigationOptions = {
     title: 'Oscars Voting - 2018',
