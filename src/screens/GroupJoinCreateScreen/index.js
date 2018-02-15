@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { MainView, Button } from 'src/common';
+import { Button, Input, MainView } from 'src/common';
 
 export default class GroupJoinCreateScreen extends Component {
   static navigationOptions = {
@@ -15,6 +15,8 @@ export default class GroupJoinCreateScreen extends Component {
 
   static defaultProps = {};
 
+  state = { textValue: '' };
+
   // PRIVATE
   _navigate = ({ newGroup }) => {
     const { navigation } = this.props;
@@ -22,6 +24,10 @@ export default class GroupJoinCreateScreen extends Component {
     newGroup
       ? navigation.navigate('LandingScreen')
       : navigation.navigate('LandingScreen');
+  };
+
+  _onInputChange = textValue => {
+    this.setState({ textValue });
   };
 
   render() {
@@ -39,6 +45,14 @@ export default class GroupJoinCreateScreen extends Component {
             text="Join Group"
           />
         </View>
+
+        <Input
+          errorText="There was an error"
+          label="Input Field"
+          onChangeText={this._onInputChange}
+          placeholder="Type your text here"
+          value={this.state.textValue}
+        />
       </MainView>
     );
   }
