@@ -6,14 +6,14 @@
     "codecov": "^3.0.0",
     "jest-expo": "25.0.0",
     "react-native-scripts": "1.11.1",
-    "react-test-renderer": "16.2.0"
+    "react-test-renderer": "16.2.0",
+    "remote-redux-devtools": "^0.5.12"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "android": "react-native-scripts android",
     "eject": "react-native-scripts eject",
-    "format":
-      "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
+    "format": "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
     "ios": "react-native-scripts ios",
     "lint": "eslint .",
     "lint:fix": "eslint . --ext .js --fix",
