@@ -7,13 +7,13 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'CLEAR_DATA':
-      return { ...state, categoryData: [] };
+      return {...state, categoryData: []};
 
-    case 'APPEND_DATA':
-      return {
-        ...state,
-        categoryData: state.categoryData.concat(action.data),
-      };
+    case 'UPDATE_CATEGORY_DATA':
+      return {...state, loading: false, categoryData: action.categoryData};
+
+    case 'UPDATE_LOADING':
+      return {...state, loading: action.loading};
 
     default:
       return state;
