@@ -17,8 +17,28 @@ export const categories = [
   { id: 1, category: 'Actor in a Leading Role' },
   { id: 2, category: 'Actress in a Leading Role' },
   { id: 3, category: 'Actor in a Supporting Role' },
-  { id: 4, category: 'Animated Feature Film' },
-  { id: 5, category: 'Cinematography' },
+  {
+    id: 4,
+    category: 'Animated Feature Film',
+    items: [
+      'tt3874544', // Boss baby
+      'tt3874544', // breadwinniner
+      'tt2380307', // coco
+      'tt3411444', // ferdinand
+      'tt3262342', // loving vincent
+    ],
+  },
+  {
+    id: 5,
+    category: 'Cinematography',
+    items: [
+      'tt1856101', // Blade Runner
+      'tt4555426', // Darkest Hour
+      'tt5013056', // Dunkirk
+      'tt2396589', // Mudbound
+      'tt5580390', // The Shape of Water
+    ],
+  },
   { id: 6, category: 'Costume Design' },
   { id: 7, category: 'Directing' },
   { id: 8, category: 'Documentary (Feature)' },
