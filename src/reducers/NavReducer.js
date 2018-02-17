@@ -1,8 +1,8 @@
 // import { NavigationActions } from 'react-navigation';
-import { AppNavigator } from '../navigators';
+import {AppNavigator} from '../navigators';
 
 const initialState = AppNavigator.router.getStateForAction(
-  AppNavigator.router.getActionForPathAndParams('GroupJoinCreateScreen')
+  AppNavigator.router.getActionForPathAndParams('LandingScreen')
 );
 
 export default (state = initialState, action) => {
