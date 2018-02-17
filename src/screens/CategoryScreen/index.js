@@ -5,6 +5,7 @@ import { Button, MainView, Text } from 'src/common';
 import { connect } from 'react-redux';
 import { fetchCategoryData } from 'src/actions';
 import ImageSection from './components/ImageSection';
+import TextSection from './components/TextSection';
 
 class CategoryScreen extends React.Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -20,13 +21,25 @@ class CategoryScreen extends React.Component {
     navigation: PropTypes.shape({
       state: PropTypes.shape({
         params: PropTypes.shape({
-          id: PropTypes.string,
+          id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+          state: PropTypes.shape({
+            category: PropTypes.string,
+          }),
         }),
       }),
     }).isRequired,
   };
 
-  static defaultProps = {};
+  static defaultProps = {
+    fetchCategoryData: () => null,
+    navigation: {
+      state: {
+        params: {
+          id: null,
+        },
+      },
+    },
+  };
 
   state = {
     selectedItemIndex: 0,
@@ -56,22 +69,13 @@ class CategoryScreen extends React.Component {
   _renderItem = () => {
     const itemData = this.props.categoryData[this.state.selectedItemIndex];
     return (
-      <View>
-        <ImageSection source={itemData.Poster} />
-        <Text
-          style={{
-            fontSize: 22,
-            flex: 1,
-            paddingTop: 20,
-            textAlign: 'center',
-          }}
-        >
-          {itemData.Title}
-        </Text>
+      <View style={{ flex: 1 }}>
+        <ImageSection source={itemData.picture} />
         <View style={styles.buttonRow}>
           <Button onPress={() => this._handleCycle(-1)} text="Prev" />
           <Button onPress={() => this._handleCycle(1)} text="Next" />
         </View>
+        <TextSection data={itemData} />
       </View>
     );
   };
@@ -94,8 +98,9 @@ export { CategoryScreen };
 
 const styles = StyleSheet.create({
   buttonRow: {
-    justifyContent: 'space-around',
     flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 20,
   },
 });
 

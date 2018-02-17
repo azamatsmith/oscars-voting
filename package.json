@@ -3,29 +3,47 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-jest": "^22.2.2",
+    "babel-preset-react-native": "^4.0.0",
+    "babel-preset-react-native-stage-0": "^1.0.1",
     "codecov": "^3.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jest-expo": "25.0.0",
+    "react-dom": "^16.2.0",
     "react-native-scripts": "1.11.1",
-    "react-test-renderer": "16.2.0"
+    "react-test-renderer": "16.2.0",
+    "remote-redux-devtools": "^0.5.12"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "android": "react-native-scripts android",
     "eject": "react-native-scripts eject",
-    "format":
-      "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
+    "format": "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
     "ios": "react-native-scripts ios",
     "lint": "eslint .",
     "lint:fix": "eslint . --ext .js --fix",
     "start": "react-native-scripts start",
-    "test": "node node_modules/jest/bin/jest.js",
-    "test:watch": "node node_modules/jest/bin/jest.js --watch",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
     "test:coverage": "jest && codecov"
   },
   "jest": {
-    "preset": "jest-expo",
     "coverageDirectory": "./coverage/",
-    "collectCoverage": true
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "html"
+    ],
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/utils/setupTests.js",
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native-safe-area-view|react-native|react-navigation|react-navigation-redux-helpers)/)"
+    ],
+    "verbose": true
   },
   "dependencies": {
     "axios": "^0.17.1",

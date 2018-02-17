@@ -4,6 +4,7 @@ import {BackHandler} from 'react-native';
 import {Provider} from 'react-redux';
 import {NavigationActions} from 'react-navigation';
 import {createStore, applyMiddleware} from 'redux';
+import {composeWithDevTools} from 'remote-redux-devtools';
 import thunk from 'redux-thunk';
 import firebase from 'firebase';
 
@@ -17,7 +18,11 @@ if (process.env.NODE_ENV !== 'test') {
   env();
 }
 
-const store = createStore(rootReducer, applyMiddleware(middleware, thunk));
+const store = createStore(
+  rootReducer,
+  {},
+  composeWithDevTools(applyMiddleware(middleware, thunk))
+);
 
 class App extends React.Component {
   static propTypes = {

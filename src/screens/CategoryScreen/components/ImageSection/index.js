@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
 export default class ImageSection extends React.Component {
   static propTypes = {
@@ -10,10 +10,15 @@ export default class ImageSection extends React.Component {
   static defaultProps = {};
 
   render() {
-    return (
-      <View>
-        <Image source={{ uri: this.props.source }} style={{ height: 300 }} />
-      </View>
-    );
+    return <Image source={{ uri: this.props.source }} style={styles.image} />;
   }
 }
+
+const styles = StyleSheet.create({
+  image: {
+    alignSelf: 'center',
+    height: 300,
+    marginTop: 8,
+    width: 200,
+  },
+});

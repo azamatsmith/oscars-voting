@@ -32,6 +32,8 @@ export default class Button extends React.Component {
 
 const styles = StyleSheet.create({
   button: {
+    borderRadius: 2,
+    borderWidth: 2,
     padding: 12,
   },
 });

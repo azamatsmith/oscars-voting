@@ -1,9 +1,13 @@
 import React from 'react';
+import {shallow} from 'enzyme';
 import App from './App';
 
-import renderer from 'react-test-renderer';
+describe('<App />', () => {
+  const props = {};
 
-it('renders without crashing', () => {
-  const rendered = renderer.create(<App />).toJSON();
-  expect(rendered).toBeTruthy();
+  const shallowWrapper = shallow(<App {...props} />);
+
+  it('renders without crashing', () => {
+    expect(shallowWrapper.find('Provider').length).toEqual(1);
+  });
 });
