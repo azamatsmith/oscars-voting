@@ -32,7 +32,6 @@
     "coverageReporters": ["lcov", "html"],
     "preset": "react-native",
     "verbose": true,
-    "collectCoverageFrom": ["!**/node_modules/**"],
     "testPathIgnorePatterns": ["<rootDir>/node_modules/"],
     "transformIgnorePatterns": [
       "node_modules/(?!(react-native-safe-area-view|react-native|react-navigation|react-navigation-redux-helpers)/)"
