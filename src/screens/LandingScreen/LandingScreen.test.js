@@ -1,7 +1,7 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import LandingScreen from './';
-import {categories} from 'src/utils/data';
+import { categories } from 'src/utils/data';
 
 describe('<LandingScreen />', () => {
   const props = {
