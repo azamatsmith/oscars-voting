@@ -1,5 +1,5 @@
 // import { NavigationActions } from 'react-navigation';
-import {AppNavigator} from 'src/navigators';
+import { AppNavigator } from 'src/navigators';
 
 const initialState = AppNavigator.router.getStateForAction(
   AppNavigator.router.getActionForPathAndParams('LandingScreen')

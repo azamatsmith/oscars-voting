@@ -1,6 +1,6 @@
 import React from 'react';
-import {Linking, StyleSheet, TouchableOpacity, View} from 'react-native';
-import {Text} from 'src/common';
+import { Linking, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Text } from 'src/common';
 import PropTypes from 'prop-types';
 
 export default class TextSection extends React.Component {
@@ -21,7 +21,7 @@ export default class TextSection extends React.Component {
   // PRIVATE
 
   _openLink = () => {
-    const {link} = this.props.data;
+    const { link } = this.props.data;
     Linking.canOpenURL(link).then(supported => {
       if (supported) {
         Linking.openURL(link);
@@ -32,7 +32,7 @@ export default class TextSection extends React.Component {
   };
 
   _renderLink = () => {
-    const {link} = this.props.data;
+    const { link } = this.props.data;
     if (link) {
       return (
         <TouchableOpacity onPress={this._openLink}>
@@ -44,7 +44,7 @@ export default class TextSection extends React.Component {
   };
 
   render() {
-    const {link, name} = this.props.data;
+    const { link, name } = this.props.data;
     return (
       <View style={styles.container}>
         <Text style={styles.title}>{name}</Text>
