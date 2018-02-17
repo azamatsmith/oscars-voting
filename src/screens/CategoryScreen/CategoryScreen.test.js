@@ -1,16 +1,16 @@
 import React from 'react';
-import { CategoryScreen } from './';
+import {CategoryScreen} from './';
 
 import renderer from 'react-test-renderer';
 
 describe('<CategoryScreen />', () => {
   const props = {
     categoryData: [],
+    fetchCategoryData: jest.fn(),
   };
 
   it('renders without crashing', () => {
-    expect(true).toBe(true);
-    // const rendered = renderer.create(<CategoryScreen {...props} />).toJSON();
-    // expect(rendered).toBeTruthy();
+    const rendered = renderer.create(<CategoryScreen {...props} />).toJSON();
+    expect(rendered).toBeTruthy();
   });
 });

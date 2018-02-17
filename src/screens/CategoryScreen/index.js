@@ -27,7 +27,16 @@ class CategoryScreen extends React.Component {
     }).isRequired,
   };
 
-  static defaultProps = {};
+  static defaultProps = {
+    fetchCategoryData: () => null,
+    navigation: {
+      state: {
+        params: {
+          id: null,
+        },
+      },
+    },
+  };
 
   state = {
     selectedItemIndex: 0,
