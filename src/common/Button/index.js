@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text } from 'src/common';
-import { StyleSheet, TouchableHighlight } from 'react-native';
+import {Text} from 'src/common';
+import {StyleSheet, TouchableHighlight} from 'react-native';
 
 export default class Button extends React.Component {
   static propTypes = {
@@ -21,7 +21,7 @@ export default class Button extends React.Component {
   _renderText = () => <Text>{this.props.text}</Text>;
 
   render() {
-    const { children, style, ...rest } = this.props;
+    const {children, style, ...rest} = this.props;
     return (
       <TouchableHighlight style={[styles.button, style]} {...rest}>
         {children || this._renderText()}
@@ -32,6 +32,8 @@ export default class Button extends React.Component {
 
 const styles = StyleSheet.create({
   button: {
+    borderRadius: 2,
+    borderWidth: 2,
     padding: 12,
   },
 });

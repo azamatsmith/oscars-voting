@@ -86,8 +86,9 @@ export {CategoryScreen};
 
 const styles = StyleSheet.create({
   buttonRow: {
-    justifyContent: 'space-around',
     flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 20,
   },
 });
 
