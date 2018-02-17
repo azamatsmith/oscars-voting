@@ -1,16 +1,24 @@
 import React from 'react';
+import {shallow} from 'enzyme';
 import {CategoryScreen} from './';
-
-import renderer from 'react-test-renderer';
 
 describe('<CategoryScreen />', () => {
   const props = {
     categoryData: [],
     fetchCategoryData: jest.fn(),
+    navigation: {
+      state: {
+        params: {
+          id: 44,
+          category: 'A Category',
+        },
+      },
+    },
   };
 
+  const shallowWrapper = shallow(<CategoryScreen {...props} />);
+
   it('renders without crashing', () => {
-    const rendered = renderer.create(<CategoryScreen {...props} />).toJSON();
-    expect(rendered).toBeTruthy();
+    expect(shallowWrapper.find('MainView').length).toEqual(1);
   });
 });

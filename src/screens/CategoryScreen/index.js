@@ -22,6 +22,9 @@ class CategoryScreen extends React.Component {
       state: PropTypes.shape({
         params: PropTypes.shape({
           id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+          state: PropTypes.shape({
+            category: PropTypes.string,
+          }),
         }),
       }),
     }).isRequired,
