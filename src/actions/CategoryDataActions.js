@@ -22,5 +22,7 @@ export const fetchCategoryData = id => dispatch => {
       }));
       const filteredData = data.filter(obj => items.indexOf(obj.id) >= 0);
       dispatch({ type: 'UPDATE_CATEGORY_DATA', categoryData: filteredData });
-    });
+    })
+    // eslint-disable-next-line
+    .catch(err => console.log('error fetching category data', err));
 };
