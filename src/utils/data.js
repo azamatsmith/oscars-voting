@@ -61,7 +61,17 @@ export const categories = [
   {id: 15, category: 'Production Design'},
   {id: 16, category: 'Short Film (Animated)'},
   {id: 17, category: 'Short Film (Live Action)'},
-  {id: 18, category: 'Sound Editing'},
+  {
+    id: 18,
+    category: 'Sound Editing',
+    items: [
+      'tt3890160', // Baby Driver
+      'tt1856101', // Blade Runner
+      'tt5013056', // Dunkirk
+      'tt5580390', // The Shape of Water
+      'tt2527336', // Start Wars: The Last Jedi
+    ],
+  },
   {id: 19, category: 'Sound Mixing'},
   {id: 20, category: 'Writing (Adapted Screenplay)'},
   {id: 21, category: 'Writing (Original Screenplay)'},
