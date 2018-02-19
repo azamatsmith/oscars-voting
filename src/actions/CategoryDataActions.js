@@ -9,10 +9,11 @@ export const fetchCategoryData = id => dispatch => {
 
   // items is an array of ids
   const { items } = categories[id];
+  const type = items[0].slice(0, 2) === 'nm' ? 'people' : 'movies';
 
   firebase
     .database()
-    .ref('/movies')
+    .ref(`/${type}`)
     .once('value')
     .then(snapshot => {
       const result = snapshot.val();
