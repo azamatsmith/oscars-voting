@@ -27,8 +27,9 @@ export const categories = [
     ],
   },
   {id: 3, category: 'Actor in a Supporting Role'},
+  {id: 4, category: 'Actoress in a Supporting Role'},
   {
-    id: 4,
+    id: 5,
     category: 'Animated Feature Film',
     items: [
       'tt3874544', // Boss baby
@@ -39,7 +40,7 @@ export const categories = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     category: 'Cinematography',
     items: [
       'tt1856101', // Blade Runner
@@ -49,15 +50,15 @@ export const categories = [
       'tt5580390', // The Shape of Water
     ],
   },
-  {id: 6, category: 'Costume Design'},
-  {id: 7, category: 'Directing'},
-  {id: 8, category: 'Documentary (Feature)'},
-  {id: 9, category: 'Documentary (Short Subject)'},
-  {id: 10, category: 'Film Editing'},
-  {id: 11, category: 'Foreign Language Film'},
-  {id: 12, category: 'Makeup and Hairstyling'},
+  {id: 7, category: 'Costume Design'},
+  {id: 8, category: 'Directing'},
+  {id: 9, category: 'Documentary (Feature)'},
+  {id: 10, category: 'Documentary (Short Subject)'},
+  {id: 11, category: 'Film Editing'},
+  {id: 12, category: 'Foreign Language Film'},
+  {id: 13, category: 'Makeup and Hairstyling'},
   {
-    id: 13,
+    id: 14,
     category: 'Music (Original Score)',
     items: [
       'tt5013056', // Dunkirk
@@ -67,12 +68,12 @@ export const categories = [
       'tt5027774', // Three Billboards outside Ebbing, Missouri
     ],
   },
-  {id: 14, category: 'Music (Original Song)'},
-  {id: 15, category: 'Production Design'},
-  {id: 16, category: 'Short Film (Animated)'},
-  {id: 17, category: 'Short Film (Live Action)'},
+  {id: 15, category: 'Music (Original Song)'},
+  {id: 16, category: 'Production Design'},
+  {id: 17, category: 'Short Film (Animated)'},
+  {id: 18, category: 'Short Film (Live Action)'},
   {
-    id: 18,
+    id: 19,
     category: 'Sound Editing',
     items: [
       'tt3890160', // Baby Driver
@@ -82,7 +83,7 @@ export const categories = [
       'tt2527336', // Start Wars: The Last Jedi
     ],
   },
-  {id: 19, category: 'Sound Mixing'},
-  {id: 20, category: 'Writing (Adapted Screenplay)'},
-  {id: 21, category: 'Writing (Original Screenplay)'},
+  {id: 20, category: 'Sound Mixing'},
+  {id: 21, category: 'Writing (Adapted Screenplay)'},
+  {id: 22, category: 'Writing (Original Screenplay)'},
 ];
