@@ -8,7 +8,7 @@ describe('CategoryDataActions', () => {
     expect(fetchCategoryData).toBeDefined();
   });
 
-  it('fetchCategoryData', () => {
+  it('calling fetchCategoryData should no throw an error', () => {
     expect(fetchCategoryData).toBeDefined();
     expect(dispatch).toHaveBeenCalledTimes(0);
     fetchCategoryData(3)(dispatch, getState);
