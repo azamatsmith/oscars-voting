@@ -1,4 +1,4 @@
-import { fetchCategoryData } from 'src/actions';
+import {fetchCategoryData} from 'src/actions';
 
 describe('CategoryDataActions', () => {
   const getState = () => null;
@@ -11,7 +11,7 @@ describe('CategoryDataActions', () => {
   it('calling fetchCategoryData should no throw an error', () => {
     expect(fetchCategoryData).toBeDefined();
     expect(dispatch).toHaveBeenCalledTimes(0);
-    fetchCategoryData(3)(dispatch, getState);
+    fetchCategoryData(0)(dispatch, getState);
     expect(dispatch).toHaveBeenCalledTimes(1);
   });
 });
