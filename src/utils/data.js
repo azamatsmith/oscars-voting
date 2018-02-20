@@ -80,7 +80,17 @@ export const categories = [
       'tt5580390', // The Shape of Water
     ],
   },
-  {id: 7, category: 'Costume Design'},
+  {
+    id: 7,
+    category: 'Costume Design',
+    items: [
+      'tt2771200', // Beauty and the Beast
+      'tt4555426', // Darkest Hour
+      'tt5776858', // Phantom Tread
+      'tt5580390', // The Shape of Water
+      'tt5816682', // Victoria & Abdul
+    ],
+  },
   {id: 8, category: 'Directing'},
   {id: 9, category: 'Documentary (Feature)'},
   {id: 10, category: 'Documentary (Short Subject)'},
