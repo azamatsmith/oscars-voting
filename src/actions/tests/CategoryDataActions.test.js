@@ -1,4 +1,4 @@
-import {fetchCategoryData} from 'src/actions';
+import { fetchCategoryData } from 'src/actions';
 
 describe('CategoryDataActions', () => {
   const getState = () => null;

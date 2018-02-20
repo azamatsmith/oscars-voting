@@ -14,7 +14,17 @@ export const categories = [
       'tt5027774',
     ],
   },
-  { id: 1, category: 'Actor in a Leading Role' },
+  {
+    id: 1,
+    category: 'Actor in a Leading Role',
+    items: [
+      'nm3154303', // Timothée Chalamet
+      'nm0000358', // Daniel Day-Lewis
+      'nm2257207', // Daniel Kaluuya
+      'nm0000198', // Gary Oldman
+      'nm0000243', // Denzel Washington
+    ],
+  },
   {
     id: 2,
     category: 'Actress in a Leading Role',
@@ -26,7 +36,17 @@ export const categories = [
       'nm0000658', // Meryl Streep
     ],
   },
-  { id: 3, category: 'Actor in a Supporting Role' },
+  {
+    id: 3,
+    category: 'Actor in a Supporting Role',
+    items: [
+      'nm0000353', // Willem Dafoe
+      'nm0000437', // Woody Harrelson
+      'nm0420955', // Richard Jenkins
+      'nm0001626', // Christopher Plummer
+      'nm0005377', // Sam Rockwell
+    ],
+  },
   { id: 4, category: 'Actoress in a Supporting Role' },
   {
     id: 5,
