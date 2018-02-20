@@ -104,7 +104,17 @@ export const categories = [
   },
   {id: 9, category: 'Documentary (Feature)'},
   {id: 10, category: 'Documentary (Short Subject)'},
-  {id: 11, category: 'Film Editing'},
+  {
+    id: 11,
+    category: 'Film Editing',
+    items: [
+      'tt3890160', // Baby Driver
+      'tt5013056', // Dunkirk
+      'tt5580036', // I, Tonya
+      'tt5580390', // The Shape of Water
+      'tt5027774', // Three Billboards outside Ebbing, Missouri
+    ],
+  },
   {id: 12, category: 'Foreign Language Film'},
   {id: 13, category: 'Makeup and Hairstyling'},
   {
