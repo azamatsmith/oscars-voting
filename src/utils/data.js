@@ -132,7 +132,7 @@ export const categories = [
       'tt5013056', // Dunkirk
       'tt5776858', // Phantom Tread
       'tt5580390', // The Shape of Water
-      'tt2527336', // Start Wars: The Last Jedi
+      'tt2527336', // Star Wars: The Last Jedi
       'tt5027774', // Three Billboards outside Ebbing, Missouri
     ],
   },
@@ -148,10 +148,31 @@ export const categories = [
       'tt1856101', // Blade Runner
       'tt5013056', // Dunkirk
       'tt5580390', // The Shape of Water
-      'tt2527336', // Start Wars: The Last Jedi
+      'tt2527336', // Star Wars: The Last Jedi
     ],
   },
-  {id: 20, category: 'Sound Mixing'},
-  {id: 21, category: 'Writing (Adapted Screenplay)'},
-  {id: 22, category: 'Writing (Original Screenplay)'},
+  {
+    id: 20,
+    category: 'Sound Mixing',
+    items: [
+      'tt3890160', // Baby Driver
+      'tt1856101', // Blade Runner
+      'tt5013056', // Dunkirk
+      'tt5580390', // The Shape of Water
+      'tt2527336', // Star Wars: The Last Jedi
+    ],
+  },
+  {
+    id: 21,
+    category: 'Visual Effects',
+    items: [
+      'tt1856101', // Blade Runner
+      'tt3896198', // Guardians of the Galaxy Vol. 2
+      'tt3731562', // Kong: Skull Island
+      'tt2527336', // Star Wars: The Last Jedi
+      'tt3450958', // War for the Planet of the Apes
+    ],
+  },
+  {id: 22, category: 'Writing (Adapted Screenplay)'},
+  {id: 23, category: 'Writing (Original Screenplay)'},
 ];
