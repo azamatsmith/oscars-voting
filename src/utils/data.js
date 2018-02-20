@@ -14,7 +14,17 @@ export const categories = [
       'tt5027774',
     ],
   },
-  { id: 1, category: 'Actor in a Leading Role' },
+  {
+    id: 1,
+    category: 'Actor in a Leading Role',
+    items: [
+      'nm3154303', // Timothée Chalamet
+      'nm0000358', // Daniel Day-Lewis
+      'nm2257207', // Daniel Kaluuya
+      'nm0000198', // Gary Oldman
+      'nm0000243', // Denzel Washington
+    ],
+  },
   {
     id: 2,
     category: 'Actress in a Leading Role',
