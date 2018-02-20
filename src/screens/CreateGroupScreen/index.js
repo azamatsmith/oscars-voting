@@ -1,66 +1,85 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { MainView, Text, Button } from 'src/common';
+import { MainView, Text, Button, Input } from 'src/common';
 import firebase from 'firebase';
 
 export default class CreateGroupScreen extends Component {
 
-  state = {userName:"Test", groupName:"Group Test"}
+  state = {userName: '', groupName: ''}
 
   static navigationOptions = {
     title: 'Oscars Voting - 2018',
   };
 
   static propTypes = {
-    navigation: PropTypes.any,
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+    })
   };
 
   static defaultProps = {  };
 
   // PRIVATE
-  _randomGroupId = () => {return Math.floor(1000 + Math.random() * 9000)};
 
-  //Method for firebase add group
-  _createGroup = () => {
+    //Method for firebase add group
+    _createGroup = () => {
+      
+      var dbRef = firebase.database();
+
+      //Get unique key for group
+      var groupKey = dbRef
+        .ref()
+        .child('groups')
+        .push().key;
+
+      //Create Group
+      dbRef.ref('groups/' + groupKey).set({
+        name: this.state.groupName,
+        groupId: this._randomGroupId()
+      });
+
+      //Create User
+      dbRef.ref('users/' + this.state.userName).set({
+        name: this.state.userName,
+        admin: true,
+        groupId: groupKey
+      });
+    };
     
-    var dbRef = firebase.database();
+    _randomGroupId = () => {return Math.floor(1000 + Math.random() * 9000)};
 
-    //Get unique key for group
-    var groupKey = dbRef
-      .ref()
-      .child('groups')
-      .push().key;
 
-    //Create Group
-    dbRef.ref('groups/' + groupKey).set({
-      name: this.groupName,
-      groupId: this._randomGroupId(),
-    });
+    render() {
+      return (
+        <MainView>
+          <View style={styles.groupViewStyle}>
+            <Text> Create a new group. </Text>
 
-    //Create User
-    dbRef.ref('users/' + this.userName).set({
-      name: this.userName,
-      admin: true,
-      groupId: groupKey,
-    });
-  };
+            <Input 
+              label='Group Name'
+              onChangeText={groupName => this.setState({ groupName })}
+              placeholder="groupname"
+              value={this.state.groupName}
+            />
 
-  render() {
-    return (
-      <MainView>
-        <View style={styles.groupViewStyle}>
-          <Text> Create a new group. </Text>
-          <Text> Enter group. </Text>
-          <Button
-            onPress={() => this._createGroup()}
-            style={styles.buttonStyle}
-            text="Create Group"
-          />
-        </View>
-      </MainView>
-    );
-  }
+            <Input 
+              label="User Name"
+              onChangeText={userName => this.setState({ userName })}
+              placeholder="username"
+              value={this.state.userName}            
+            /> 
+
+            <Button
+              onPress={() => this._createGroup()}
+              style={styles.buttonStyle}
+              text="Create Group"
+            />
+            
+          </View>
+        </MainView>
+      );
+    }
 }
 
 // Export class so that you do not have to mount redux store in tests
@@ -68,7 +87,7 @@ export { CreateGroupScreen };
 
 const styles = StyleSheet.create({
   groupViewStyle: {
-    flex: 1,
+    flex: .25,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
