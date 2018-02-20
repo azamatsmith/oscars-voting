@@ -47,7 +47,17 @@ export const categories = [
       'nm0005377', // Sam Rockwell
     ],
   },
-  { id: 4, category: 'Actoress in a Supporting Role' },
+  {
+    id: 4,
+    category: 'Actress in a Supporting Role',
+    items: [
+      'nm0004763', // Mary J. Blige
+      'nm0005049', // Allison Janney
+      'nm0544334', // Lesley Manville
+      'nm0582418', // Laurie Metcalf
+      'nm0818055', // Octavia Spencer
+    ],
+  },
   {
     id: 5,
     category: 'Animated Feature Film',
@@ -70,13 +80,13 @@ export const categories = [
       'tt5580390', // The Shape of Water
     ],
   },
-  { id: 7, category: 'Costume Design' },
-  { id: 8, category: 'Directing' },
-  { id: 9, category: 'Documentary (Feature)' },
-  { id: 10, category: 'Documentary (Short Subject)' },
-  { id: 11, category: 'Film Editing' },
-  { id: 12, category: 'Foreign Language Film' },
-  { id: 13, category: 'Makeup and Hairstyling' },
+  {id: 7, category: 'Costume Design'},
+  {id: 8, category: 'Directing'},
+  {id: 9, category: 'Documentary (Feature)'},
+  {id: 10, category: 'Documentary (Short Subject)'},
+  {id: 11, category: 'Film Editing'},
+  {id: 12, category: 'Foreign Language Film'},
+  {id: 13, category: 'Makeup and Hairstyling'},
   {
     id: 14,
     category: 'Music (Original Score)',
@@ -88,10 +98,10 @@ export const categories = [
       'tt5027774', // Three Billboards outside Ebbing, Missouri
     ],
   },
-  { id: 15, category: 'Music (Original Song)' },
-  { id: 16, category: 'Production Design' },
-  { id: 17, category: 'Short Film (Animated)' },
-  { id: 18, category: 'Short Film (Live Action)' },
+  {id: 15, category: 'Music (Original Song)'},
+  {id: 16, category: 'Production Design'},
+  {id: 17, category: 'Short Film (Animated)'},
+  {id: 18, category: 'Short Film (Live Action)'},
   {
     id: 19,
     category: 'Sound Editing',
@@ -103,7 +113,7 @@ export const categories = [
       'tt2527336', // Start Wars: The Last Jedi
     ],
   },
-  { id: 20, category: 'Sound Mixing' },
-  { id: 21, category: 'Writing (Adapted Screenplay)' },
-  { id: 22, category: 'Writing (Original Screenplay)' },
+  {id: 20, category: 'Sound Mixing'},
+  {id: 21, category: 'Writing (Adapted Screenplay)'},
+  {id: 22, category: 'Writing (Original Screenplay)'},
 ];
