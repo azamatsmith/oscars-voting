@@ -6,8 +6,8 @@ export const categories = [
       'tt5726616',
       'tt4555426',
       'tt5013056',
-      'tt5052448',
-      'tt4925292',
+      'tt5052448', // Get Out
+      'tt4925292', // Lady Bird
       'tt5776858',
       'tt6294822',
       'tt5580390',
@@ -91,7 +91,17 @@ export const categories = [
       'tt5816682', // Victoria & Abdul
     ],
   },
-  {id: 8, category: 'Directing'},
+  {
+    id: 8,
+    category: 'Directing',
+    items: [
+      'tt5013056', // Dunkirk
+      'tt5052448', // Get Out
+      'tt4925292', // Lady Bird
+      'tt5776858', // Phantom Tread
+      'tt5580390', // The Shape of Water
+    ],
+  },
   {id: 9, category: 'Documentary (Feature)'},
   {id: 10, category: 'Documentary (Short Subject)'},
   {id: 11, category: 'Film Editing'},
