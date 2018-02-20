@@ -116,7 +116,15 @@ export const categories = [
     ],
   },
   {id: 12, category: 'Foreign Language Film'},
-  {id: 13, category: 'Makeup and Hairstyling'},
+  {
+    id: 13,
+    category: 'Makeup and Hairstyling',
+    items: [
+      'tt4555426', // Darkest Hour
+      'tt5816682', // Victoria & Abdul
+      'tt2543472', // Wonder
+    ],
+  },
   {
     id: 14,
     category: 'Music (Original Score)',
