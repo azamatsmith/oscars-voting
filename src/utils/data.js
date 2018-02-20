@@ -36,7 +36,17 @@ export const categories = [
       'nm0000658', // Meryl Streep
     ],
   },
-  { id: 3, category: 'Actor in a Supporting Role' },
+  {
+    id: 3,
+    category: 'Actor in a Supporting Role',
+    items: [
+      'nm0000353', // Willem Dafoe
+      'nm0000437', // Woody Harrelson
+      'nm0420955', // Richard Jenkins
+      'nm0001626', // Christopher Plummer
+      'nm0005377', // Sam Rockwell
+    ],
+  },
   { id: 4, category: 'Actoress in a Supporting Role' },
   {
     id: 5,
