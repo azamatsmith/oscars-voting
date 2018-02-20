@@ -14,11 +14,42 @@ export const categories = [
       'tt5027774',
     ],
   },
-  {id: 1, category: 'Actor in a Leading Role'},
-  {id: 2, category: 'Actress in a Leading Role'},
-  {id: 3, category: 'Actor in a Supporting Role'},
   {
-    id: 4,
+    id: 1,
+    category: 'Actor in a Leading Role',
+    items: [
+      'nm3154303', // Timothée Chalamet
+      'nm0000358', // Daniel Day-Lewis
+      'nm2257207', // Daniel Kaluuya
+      'nm0000198', // Gary Oldman
+      'nm0000243', // Denzel Washington
+    ],
+  },
+  {
+    id: 2,
+    category: 'Actress in a Leading Role',
+    items: [
+      'nm1020089', // Sally Hawkins
+      'nm0000531', // Frances McDormand
+      'nm3053338', // Margot Robbie
+      'nm1519680', // Saoirse Ronan
+      'nm0000658', // Meryl Streep
+    ],
+  },
+  {
+    id: 3,
+    category: 'Actor in a Supporting Role',
+    items: [
+      'nm0000353', // Willem Dafoe
+      'nm0000437', // Woody Harrelson
+      'nm0420955', // Richard Jenkins
+      'nm0001626', // Christopher Plummer
+      'nm0005377', // Sam Rockwell
+    ],
+  },
+  { id: 4, category: 'Actoress in a Supporting Role' },
+  {
+    id: 5,
     category: 'Animated Feature Film',
     items: [
       'tt3874544', // Boss baby
@@ -29,7 +60,7 @@ export const categories = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     category: 'Cinematography',
     items: [
       'tt1856101', // Blade Runner
@@ -39,15 +70,15 @@ export const categories = [
       'tt5580390', // The Shape of Water
     ],
   },
-  {id: 6, category: 'Costume Design'},
-  {id: 7, category: 'Directing'},
-  {id: 8, category: 'Documentary (Feature)'},
-  {id: 9, category: 'Documentary (Short Subject)'},
-  {id: 10, category: 'Film Editing'},
-  {id: 11, category: 'Foreign Language Film'},
-  {id: 12, category: 'Makeup and Hairstyling'},
+  { id: 7, category: 'Costume Design' },
+  { id: 8, category: 'Directing' },
+  { id: 9, category: 'Documentary (Feature)' },
+  { id: 10, category: 'Documentary (Short Subject)' },
+  { id: 11, category: 'Film Editing' },
+  { id: 12, category: 'Foreign Language Film' },
+  { id: 13, category: 'Makeup and Hairstyling' },
   {
-    id: 13,
+    id: 14,
     category: 'Music (Original Score)',
     items: [
       'tt5013056', // Dunkirk
@@ -57,12 +88,22 @@ export const categories = [
       'tt5027774', // Three Billboards outside Ebbing, Missouri
     ],
   },
-  {id: 14, category: 'Music (Original Song)'},
-  {id: 15, category: 'Production Design'},
-  {id: 16, category: 'Short Film (Animated)'},
-  {id: 17, category: 'Short Film (Live Action)'},
-  {id: 18, category: 'Sound Editing'},
-  {id: 19, category: 'Sound Mixing'},
-  {id: 20, category: 'Writing (Adapted Screenplay)'},
-  {id: 21, category: 'Writing (Original Screenplay)'},
+  { id: 15, category: 'Music (Original Song)' },
+  { id: 16, category: 'Production Design' },
+  { id: 17, category: 'Short Film (Animated)' },
+  { id: 18, category: 'Short Film (Live Action)' },
+  {
+    id: 19,
+    category: 'Sound Editing',
+    items: [
+      'tt3890160', // Baby Driver
+      'tt1856101', // Blade Runner
+      'tt5013056', // Dunkirk
+      'tt5580390', // The Shape of Water
+      'tt2527336', // Start Wars: The Last Jedi
+    ],
+  },
+  { id: 20, category: 'Sound Mixing' },
+  { id: 21, category: 'Writing (Adapted Screenplay)' },
+  { id: 22, category: 'Writing (Original Screenplay)' },
 ];
