@@ -6,8 +6,8 @@ export const categories = [
       'tt5726616',
       'tt4555426',
       'tt5013056',
-      'tt5052448',
-      'tt4925292',
+      'tt5052448', // Get Out
+      'tt4925292', // Lady Bird
       'tt5776858',
       'tt6294822',
       'tt5580390',
@@ -47,7 +47,17 @@ export const categories = [
       'nm0005377', // Sam Rockwell
     ],
   },
-  { id: 4, category: 'Actoress in a Supporting Role' },
+  {
+    id: 4,
+    category: 'Actress in a Supporting Role',
+    items: [
+      'nm0004763', // Mary J. Blige
+      'nm0005049', // Allison Janney
+      'nm0544334', // Lesley Manville
+      'nm0582418', // Laurie Metcalf
+      'nm0818055', // Octavia Spencer
+    ],
+  },
   {
     id: 5,
     category: 'Animated Feature Film',
@@ -70,13 +80,51 @@ export const categories = [
       'tt5580390', // The Shape of Water
     ],
   },
-  { id: 7, category: 'Costume Design' },
-  { id: 8, category: 'Directing' },
+  {
+    id: 7,
+    category: 'Costume Design',
+    items: [
+      'tt2771200', // Beauty and the Beast
+      'tt4555426', // Darkest Hour
+      'tt5776858', // Phantom Tread
+      'tt5580390', // The Shape of Water
+      'tt5816682', // Victoria & Abdul
+    ],
+  },
+  {
+    id: 8,
+    category: 'Directing',
+    items: [
+      'tt5013056', // Dunkirk
+      'tt5052448', // Get Out
+      'tt4925292', // Lady Bird
+      'tt5776858', // Phantom Tread
+      'tt5580390', // The Shape of Water
+    ],
+  },
   { id: 9, category: 'Documentary (Feature)' },
   { id: 10, category: 'Documentary (Short Subject)' },
-  { id: 11, category: 'Film Editing' },
+  {
+    id: 11,
+    category: 'Film Editing',
+    items: [
+      'tt3890160', // Baby Driver
+      'tt5013056', // Dunkirk
+      'tt5580036', // I, Tonya
+      'tt5580390', // The Shape of Water
+      'tt5027774', // Three Billboards outside Ebbing, Missouri
+    ],
+  },
   { id: 12, category: 'Foreign Language Film' },
-  { id: 13, category: 'Makeup and Hairstyling' },
+  {
+    id: 13,
+    category: 'Makeup and Hairstyling',
+    items: [
+      'tt4555426', // Darkest Hour
+      'tt5816682', // Victoria & Abdul
+      'tt2543472', // Wonder
+    ],
+  },
   {
     id: 14,
     category: 'Music (Original Score)',
@@ -84,7 +132,7 @@ export const categories = [
       'tt5013056', // Dunkirk
       'tt5776858', // Phantom Tread
       'tt5580390', // The Shape of Water
-      'tt2527336', // Start Wars: The Last Jedi
+      'tt2527336', // Star Wars: The Last Jedi
       'tt5027774', // Three Billboards outside Ebbing, Missouri
     ],
   },
@@ -100,10 +148,31 @@ export const categories = [
       'tt1856101', // Blade Runner
       'tt5013056', // Dunkirk
       'tt5580390', // The Shape of Water
-      'tt2527336', // Start Wars: The Last Jedi
+      'tt2527336', // Star Wars: The Last Jedi
     ],
   },
-  { id: 20, category: 'Sound Mixing' },
-  { id: 21, category: 'Writing (Adapted Screenplay)' },
-  { id: 22, category: 'Writing (Original Screenplay)' },
+  {
+    id: 20,
+    category: 'Sound Mixing',
+    items: [
+      'tt3890160', // Baby Driver
+      'tt1856101', // Blade Runner
+      'tt5013056', // Dunkirk
+      'tt5580390', // The Shape of Water
+      'tt2527336', // Star Wars: The Last Jedi
+    ],
+  },
+  {
+    id: 21,
+    category: 'Visual Effects',
+    items: [
+      'tt1856101', // Blade Runner
+      'tt3896198', // Guardians of the Galaxy Vol. 2
+      'tt3731562', // Kong: Skull Island
+      'tt2527336', // Star Wars: The Last Jedi
+      'tt3450958', // War for the Planet of the Apes
+    ],
+  },
+  { id: 22, category: 'Writing (Adapted Screenplay)' },
+  { id: 23, category: 'Writing (Original Screenplay)' },
 ];
