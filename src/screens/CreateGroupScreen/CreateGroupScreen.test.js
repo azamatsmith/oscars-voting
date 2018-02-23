@@ -1,10 +1,7 @@
 import React from 'react';
 import CreateGroupScreen from './';
-import { shallow } from 'enzyme';
 
 import renderer from 'react-test-renderer';
-
-const shallowWrapper = shallow(<CategoryScreen {...props} />);
 
 describe('<CreateGroupScreen />', () => {
   it('renders without crashing', () => {
@@ -13,7 +10,8 @@ describe('<CreateGroupScreen />', () => {
   });
 
   it('has a function that generates a random number', () => {
-    const groupId = shallowWrapper.instance()._randomGroupId();
+    const groupId = rendered.instance()._randomGroupId();
     expect(groupId).toBeGreaterThan(0);
   });
+
 });
