@@ -1,7 +1,10 @@
 import React from 'react';
 import CreateGroupScreen from './';
+import { shallow } from 'enzyme';
 
 import renderer from 'react-test-renderer';
+
+const shallowWrapper = shallow(<CategoryScreen {...props} />);
 
 describe('<CreateGroupScreen />', () => {
   it('renders without crashing', () => {
