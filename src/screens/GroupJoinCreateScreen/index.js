@@ -23,7 +23,7 @@ export default class GroupJoinCreateScreen extends Component {
     //Will Navigate to a new screen in after implemented
     newGroup
       ? navigation.navigate('CreateGroupScreen')
-      : navigation.navigate('LandingScreen');
+      : navigation.navigate('JoinGroupScreen');
   };
 
   _onInputChange = textValue => {

@@ -7,6 +7,7 @@ import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 import CategoryScreen from '../screens/CategoryScreen';
 import CreateGroupScreen from '../screens/CreateGroupScreen';
 import GroupJoinCreateScreen from '../screens/GroupJoinCreateScreen';
+import JoinGroupScreen from '../screens/JoinGroupScreen';
 import LandingScreen from '../screens/LandingScreen';
 import { addListener } from '../utils/redux';
 
@@ -15,6 +16,7 @@ export const AppNavigator = StackNavigator(
     CategoryScreen: { screen: CategoryScreen },
     CreateGroupScreen: { screen: CreateGroupScreen },
     GroupJoinCreateScreen: { screen: GroupJoinCreateScreen },
+    JoinGroupScreen: { screen: JoinGroupScreen},
     LandingScreen: { screen: LandingScreen },
   },
   {
