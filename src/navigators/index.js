@@ -4,15 +4,17 @@ import { connect } from 'react-redux';
 import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 
 // MTS - Add additional screens here
-import GroupJoinCreateScreen from '../screens/GroupJoinCreateScreen';
 import CategoryScreen from '../screens/CategoryScreen';
+import CreateGroupScreen from '../screens/CreateGroupScreen';
+import GroupJoinCreateScreen from '../screens/GroupJoinCreateScreen';
 import LandingScreen from '../screens/LandingScreen';
 import { addListener } from '../utils/redux';
 
 export const AppNavigator = StackNavigator(
   {
-    GroupJoinCreateScreen: { screen: GroupJoinCreateScreen },
     CategoryScreen: { screen: CategoryScreen },
+    CreateGroupScreen: { screen: CreateGroupScreen },
+    GroupJoinCreateScreen: { screen: GroupJoinCreateScreen },
     LandingScreen: { screen: LandingScreen },
   },
   {

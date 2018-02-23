@@ -18,11 +18,11 @@ export default class GroupJoinCreateScreen extends Component {
   state = { textValue: '' };
 
   // PRIVATE
-  _navigate = ({ newGroup }) => {
+  _navigate = newGroup => {
     const { navigation } = this.props;
     //Will Navigate to a new screen in after implemented
     newGroup
-      ? navigation.navigate('LandingScreen')
+      ? navigation.navigate('CreateGroupScreen')
       : navigation.navigate('LandingScreen');
   };
 
