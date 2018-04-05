@@ -102,8 +102,8 @@ export const categories = [
       'tt5580390', // The Shape of Water
     ],
   },
-  { id: 9, category: 'Documentary (Feature)' },
-  { id: 10, category: 'Documentary (Short Subject)' },
+  {id: 9, category: 'Documentary (Feature)'},
+  {id: 10, category: 'Documentary (Short Subject)'},
   {
     id: 11,
     category: 'Film Editing',
@@ -115,7 +115,7 @@ export const categories = [
       'tt5027774', // Three Billboards outside Ebbing, Missouri
     ],
   },
-  { id: 12, category: 'Foreign Language Film' },
+  {id: 12, category: 'Foreign Language Film'},
   {
     id: 13,
     category: 'Makeup and Hairstyling',
@@ -136,10 +136,10 @@ export const categories = [
       'tt5027774', // Three Billboards outside Ebbing, Missouri
     ],
   },
-  { id: 15, category: 'Music (Original Song)' },
-  { id: 16, category: 'Production Design' },
-  { id: 17, category: 'Short Film (Animated)' },
-  { id: 18, category: 'Short Film (Live Action)' },
+  {id: 15, category: 'Music (Original Song)'},
+  {id: 16, category: 'Production Design'},
+  {id: 17, category: 'Short Film (Animated)'},
+  {id: 18, category: 'Short Film (Live Action)'},
   {
     id: 19,
     category: 'Sound Editing',
@@ -173,6 +173,16 @@ export const categories = [
       'tt3450958', // War for the Planet of the Apes
     ],
   },
-  { id: 22, category: 'Writing (Adapted Screenplay)' },
-  { id: 23, category: 'Writing (Original Screenplay)' },
+  {id: 22, category: 'Writing (Adapted Screenplay)'},
+  {
+    id: 23,
+    category: 'Writing (Original Screenplay)',
+    items: [
+      'tt5462602', // The Big Sick
+      'tt5052448', // Get Out
+      'tt4925292', // Lady Bird
+      'tt5580390', // The Shape of Water
+      'tt5027774', // Three Billboards outside Ebbing, Missouri
+    ],
+  },
 ];
