@@ -136,7 +136,17 @@ export const categories = [
       'tt5027774', // Three Billboards outside Ebbing, Missouri
     ],
   },
-  {id: 15, category: 'Music (Original Song)'},
+  {
+    id: 15,
+    category: 'Music (Original Song)',
+    items: [
+      'tt2396589', // Mudbound
+      'tt5726616', // Call me by your name
+      'tt2380307', // Coco
+      'tt5301662', // Marshall
+      'tt1485796', // The Greatest Showman
+    ],
+  },
   {id: 16, category: 'Production Design'},
   {id: 17, category: 'Short Film (Animated)'},
   {id: 18, category: 'Short Film (Live Action)'},
