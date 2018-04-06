@@ -102,8 +102,30 @@ export const categories = [
       'tt5580390', // The Shape of Water
     ],
   },
-  {id: 9, category: 'Documentary (Feature)'},
-  {id: 10, category: 'Documentary (Short Subject)'},
+  {
+    id: 9,
+    category: 'Documentary (Feature)',
+    items: [
+      // TODO: These are placeholders
+      'tt5013056', // Dunkirk
+      'tt5052448', // Get Out
+      'tt4925292', // Lady Bird
+      'tt5776858', // Phantom Tread
+      'tt5580390', // The Shape of Water
+    ],
+  },
+  {
+    id: 10,
+    category: 'Documentary (Short Subject)',
+    items: [
+      // TODO: These are placeholders
+      'tt5013056', // Dunkirk
+      'tt5052448', // Get Out
+      'tt4925292', // Lady Bird
+      'tt5776858', // Phantom Tread
+      'tt5580390', // The Shape of Water
+    ],
+  },
   {
     id: 11,
     category: 'Film Editing',
@@ -115,7 +137,18 @@ export const categories = [
       'tt5027774', // Three Billboards outside Ebbing, Missouri
     ],
   },
-  {id: 12, category: 'Foreign Language Film'},
+  {
+    id: 12,
+    category: 'Foreign Language Film',
+    items: [
+      // TODO: These are placeholders
+      'tt3890160', // Baby Driver
+      'tt5013056', // Dunkirk
+      'tt5580036', // I, Tonya
+      'tt5580390', // The Shape of Water
+      'tt5027774', // Three Billboards outside Ebbing, Missouri
+    ],
+  },
   {
     id: 13,
     category: 'Makeup and Hairstyling',
@@ -158,8 +191,30 @@ export const categories = [
       'tt5580390', // The Shape of Water
     ],
   },
-  {id: 17, category: 'Short Film (Animated)'},
-  {id: 18, category: 'Short Film (Live Action)'},
+  {
+    id: 17,
+    category: 'Short Film (Animated)',
+    items: [
+      'tt6794476', // Dear Basketball
+      'tt6426140', // Garden Party
+      // TODO: These 3 are placeholders
+      'tt4555426', // Darkest Hour
+      'tt5013056', // Dunkirk
+      'tt5580390', // The Shape of Water
+    ],
+  },
+  {
+    id: 18,
+    category: 'Short Film (Live Action)',
+    items: [
+      // TODO: These are all placeholders
+      'tt6794476', // Dear Basketball
+      'tt6426140', // Garden Party
+      'tt4555426', // Darkest Hour
+      'tt5013056', // Dunkirk
+      'tt5580390', // The Shape of Water
+    ],
+  },
   {
     id: 19,
     category: 'Sound Editing',
