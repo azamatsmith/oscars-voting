@@ -147,7 +147,17 @@ export const categories = [
       'tt1485796', // The Greatest Showman
     ],
   },
-  {id: 16, category: 'Production Design'},
+  {
+    id: 16,
+    category: 'Production Design',
+    items: [
+      'tt2771200', // Beauty and the Beast
+      'tt1856101', // Blade Runner
+      'tt4555426', // Darkest Hour
+      'tt5013056', // Dunkirk
+      'tt5580390', // The Shape of Water
+    ],
+  },
   {id: 17, category: 'Short Film (Animated)'},
   {id: 18, category: 'Short Film (Live Action)'},
   {
