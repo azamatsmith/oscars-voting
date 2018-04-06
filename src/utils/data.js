@@ -3,7 +3,7 @@ export const categories = [
     id: 0,
     category: 'Best Picture',
     items: [
-      'tt5726616',
+      'tt5726616', // Call me by your name
       'tt4555426',
       'tt5013056',
       'tt5052448', // Get Out
@@ -173,7 +173,17 @@ export const categories = [
       'tt3450958', // War for the Planet of the Apes
     ],
   },
-  {id: 22, category: 'Writing (Adapted Screenplay)'},
+  {
+    id: 22,
+    category: 'Writing (Adapted Screenplay)',
+    items: [
+      'tt5726616', // Call me by your name
+      'tt3521126', // The disaster artist
+      'tt3315342', // Logan
+      'tt4209788', // Molly's Game
+      'tt2396589', // Mudbound
+    ],
+  },
   {
     id: 23,
     category: 'Writing (Original Screenplay)',
