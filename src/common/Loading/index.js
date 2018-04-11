@@ -12,12 +12,16 @@ export default class Loading extends React.Component {
   };
 
   render() {
-    const { loading, ...rest } = this.props;
-    return (
-      <View style={[styles.container, styles.horizontal]}>
-        <ActivityIndicator size="large" color="#0000ff" />
-      </View>
-    );
+    const { loading } = this.props;
+    if (!loading) {
+      return null;
+    } else {
+      return (
+        <View style={[styles.container, styles.horizontal]}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      );
+    }
   }
 }
 

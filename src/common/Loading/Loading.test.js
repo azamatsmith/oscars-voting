@@ -1,11 +1,16 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 import Loading from './';
 
-import renderer from 'react-test-renderer';
-
 describe('<Loading />', () => {
+  const notLoadingWrapper = shallow(<Loading loading={false} />);
+  const defaultWrapper = shallow(<Loading />);
+
   it('renders without crashing', () => {
-    const rendered = renderer.create(<Loading />).toJSON();
-    expect(rendered).toBeTruthy();
+    expect(defaultWrapper.find('View').length).not.toEqual(0);
+  });
+
+  it('should retrun null when loading is false', () => {
+    expect(notLoadingWrapper).not.toEqual(null);
   });
 });
