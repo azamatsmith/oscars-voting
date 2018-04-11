@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View } from 'react-native';
-import { Button, MainView, Text } from 'src/common';
-import { connect } from 'react-redux';
-import { fetchCategoryData } from 'src/actions';
+import {Dimensions, Image, StyleSheet, View} from 'react-native';
+import Carousel from 'react-native-snap-carousel';
+import {Button, MainView, Text} from 'src/common';
+import {connect} from 'react-redux';
+import {fetchCategoryData} from 'src/actions';
 import ImageSection from './components/ImageSection';
 import TextSection from './components/TextSection';
 
 class CategoryScreen extends React.Component {
-  static navigationOptions = ({ navigation, navigationOptions }) => {
-    const { params } = navigation.state;
+  static navigationOptions = ({navigation, navigationOptions}) => {
+    const {params} = navigation.state;
     return {
       title: params.category,
     };
@@ -46,15 +47,15 @@ class CategoryScreen extends React.Component {
   };
 
   componentDidMount() {
-    const { id } = this.props.navigation.state.params;
+    const {id} = this.props.navigation.state.params;
     this.props.fetchCategoryData(id);
   }
 
   // PRIVATE
 
   _handleCycle = direction => {
-    const { categoryData } = this.props;
-    const { selectedItemIndex } = this.state;
+    const {categoryData} = this.props;
+    const {selectedItemIndex} = this.state;
     if (selectedItemIndex === 0 && direction === -1) {
       return null;
     }
@@ -66,17 +67,51 @@ class CategoryScreen extends React.Component {
     });
   };
 
-  _renderItem = () => {
-    const itemData = this.props.categoryData[this.state.selectedItemIndex];
+  _renderItem = ({item, index}) => {
+    // const itemData = this.props.categoryData[this.state.selectedItemIndex];
     return (
-      <View style={{ flex: 1 }}>
-        <ImageSection source={itemData.picture} />
+      <View style={{flex: 1}}>
+        <Image
+          source={{uri: item.picture}}
+          style={{
+            ...StyleSheet.absoluteFillObject,
+            resizeMode: 'cover',
+          }}
+        />
         <View style={styles.buttonRow}>
           <Button onPress={() => this._handleCycle(-1)} text="Prev" />
           <Button onPress={() => this._handleCycle(1)} text="Next" />
         </View>
-        <TextSection data={itemData} />
+        <TextSection data={item} />
       </View>
+    );
+  };
+
+  _renderCarousel = () => {
+    const {width: viewportWidth, height: viewportHeight} = Dimensions.get(
+      'window'
+    );
+    function wp(percentage) {
+      const value = percentage * viewportWidth / 100;
+      return Math.round(value);
+    }
+    const slideHeight = viewportHeight * 0.36;
+    const slideWidth = wp(75);
+    const itemHorizontalMargin = wp(2);
+
+    const sliderWidth = viewportWidth;
+    const itemWidth = slideWidth + itemHorizontalMargin * 2;
+
+    return (
+      <Carousel
+        ref={c => {
+          this._carousel = c;
+        }}
+        data={this.props.categoryData}
+        itemWidth={itemWidth}
+        renderItem={this._renderItem}
+        sliderWidth={sliderWidth}
+      />
     );
   };
 
@@ -84,17 +119,17 @@ class CategoryScreen extends React.Component {
 
   render() {
     return (
-      <MainView>
+      <View style={{flex: 1}}>
         {this.props.categoryData.length > 0
-          ? this._renderItem()
+          ? this._renderCarousel()
           : this._renderLoading()}
-      </MainView>
+      </View>
     );
   }
 }
 
 // Export class so that you do not have to mount redux store in tests
-export { CategoryScreen };
+export {CategoryScreen};
 
 const styles = StyleSheet.create({
   buttonRow: {
@@ -104,8 +139,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = ({ categoryData }) => ({
+const mapStateToProps = ({categoryData}) => ({
   categoryData: categoryData.categoryData,
 });
 
-export default connect(mapStateToProps, { fetchCategoryData })(CategoryScreen);
+export default connect(mapStateToProps, {fetchCategoryData})(CategoryScreen);
