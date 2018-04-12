@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Dimensions, Image, StyleSheet, View} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import {Button, MainView, Text} from 'src/common';
+import {Button, Text} from 'src/common';
 import {connect} from 'react-redux';
 import {fetchCategoryData} from 'src/actions';
-import ImageSection from './components/ImageSection';
 import TextSection from './components/TextSection';
 
 class CategoryScreen extends React.Component {
@@ -53,6 +52,25 @@ class CategoryScreen extends React.Component {
 
   // PRIVATE
 
+  _getWidth = () => {
+    const {width: viewportWidth, height: viewportHeight} = Dimensions.get(
+      'window'
+    );
+
+    function wp(percentage) {
+      const value = percentage * viewportWidth / 100;
+      return Math.round(value);
+    }
+
+    // const slideHeight = viewportHeight * 0.36;
+    const slideWidth = wp(75);
+    const itemHorizontalMargin = wp(2);
+
+    const sliderWidth = viewportWidth;
+    const itemWidth = slideWidth + itemHorizontalMargin * 2;
+    return {sliderWidth, itemWidth};
+  };
+
   _handleCycle = direction => {
     const {categoryData} = this.props;
     const {selectedItemIndex} = this.state;
@@ -68,15 +86,23 @@ class CategoryScreen extends React.Component {
   };
 
   _renderItem = ({item, index}) => {
-    // const itemData = this.props.categoryData[this.state.selectedItemIndex];
+    // const {imageWidth, imageHeight} = Image.getSize(
+    //   item.picture,
+    //   (srcWidth, srcHeight) => {
+    //     const maxHeight = Dimensions.get('window').height; // or something else
+    //     const maxWidth = Dimensions.get('window').width;
+
+    //     const ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+    //     return {width: srcWidth * ratio, height: srcHeight * ratio};
+    //   }
+    // )();
+    // console.log('imageWidth', imageWidth, imageHeight);
     return (
-      <View style={{flex: 1}}>
+      <View style={[styles.itemContainer, {width: this._getWidth().itemWidth}]}>
         <Image
+          resizeMode="contain"
           source={{uri: item.picture}}
-          style={{
-            ...StyleSheet.absoluteFillObject,
-            resizeMode: 'cover',
-          }}
+          style={styles.imageStyle}
         />
         <View style={styles.buttonRow}>
           <Button onPress={() => this._handleCycle(-1)} text="Prev" />
@@ -88,19 +114,7 @@ class CategoryScreen extends React.Component {
   };
 
   _renderCarousel = () => {
-    const {width: viewportWidth, height: viewportHeight} = Dimensions.get(
-      'window'
-    );
-    function wp(percentage) {
-      const value = percentage * viewportWidth / 100;
-      return Math.round(value);
-    }
-    const slideHeight = viewportHeight * 0.36;
-    const slideWidth = wp(75);
-    const itemHorizontalMargin = wp(2);
-
-    const sliderWidth = viewportWidth;
-    const itemWidth = slideWidth + itemHorizontalMargin * 2;
+    const {itemWidth, sliderWidth} = this._getWidth();
 
     return (
       <Carousel
@@ -136,6 +150,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginTop: 20,
+  },
+  imageStyle: {
+    height: 300,
+    width: '100%',
+  },
+  itemContainer: {
+    flex: 1,
+    paddingTop: 20,
   },
 });
 
