@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Dimensions, Image, StyleSheet, View} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import {Button, Text} from 'src/common';
-import {connect} from 'react-redux';
-import {fetchCategoryData} from 'src/actions';
+import { Dimensions, Image, StyleSheet, View } from 'react-native';
+import { MainView, Text } from 'src/common';
+import { connect } from 'react-redux';
+import { fetchCategoryData } from 'src/actions';
 import TextSection from './components/TextSection';
 
 class CategoryScreen extends React.Component {
-  static navigationOptions = ({navigation, navigationOptions}) => {
-    const {params} = navigation.state;
+  static navigationOptions = ({ navigation, navigationOptions }) => {
+    const { params } = navigation.state;
     return {
       title: params.category,
     };
@@ -41,19 +41,15 @@ class CategoryScreen extends React.Component {
     },
   };
 
-  state = {
-    selectedItemIndex: 0,
-  };
-
   componentDidMount() {
-    const {id} = this.props.navigation.state.params;
+    const { id } = this.props.navigation.state.params;
     this.props.fetchCategoryData(id);
   }
 
   // PRIVATE
 
   _getWidth = () => {
-    const {width: viewportWidth, height: viewportHeight} = Dimensions.get(
+    const { width: viewportWidth, height: viewportHeight } = Dimensions.get(
       'window'
     );
 
@@ -68,53 +64,26 @@ class CategoryScreen extends React.Component {
 
     const sliderWidth = viewportWidth;
     const itemWidth = slideWidth + itemHorizontalMargin * 2;
-    return {sliderWidth, itemWidth};
+    return { sliderWidth, itemWidth };
   };
 
-  _handleCycle = direction => {
-    const {categoryData} = this.props;
-    const {selectedItemIndex} = this.state;
-    if (selectedItemIndex === 0 && direction === -1) {
-      return null;
-    }
-    if (selectedItemIndex === categoryData.length - 1 && direction === 1) {
-      return null;
-    }
-    return this.setState({
-      selectedItemIndex: selectedItemIndex + direction,
-    });
-  };
-
-  _renderItem = ({item, index}) => {
-    // const {imageWidth, imageHeight} = Image.getSize(
-    //   item.picture,
-    //   (srcWidth, srcHeight) => {
-    //     const maxHeight = Dimensions.get('window').height; // or something else
-    //     const maxWidth = Dimensions.get('window').width;
-
-    //     const ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
-    //     return {width: srcWidth * ratio, height: srcHeight * ratio};
-    //   }
-    // )();
-    // console.log('imageWidth', imageWidth, imageHeight);
+  _renderItem = ({ item, index }) => {
     return (
-      <View style={[styles.itemContainer, {width: this._getWidth().itemWidth}]}>
+      <View
+        style={[styles.itemContainer, { width: this._getWidth().itemWidth }]}
+      >
         <Image
           resizeMode="contain"
-          source={{uri: item.picture}}
+          source={{ uri: item.picture }}
           style={styles.imageStyle}
         />
-        <View style={styles.buttonRow}>
-          <Button onPress={() => this._handleCycle(-1)} text="Prev" />
-          <Button onPress={() => this._handleCycle(1)} text="Next" />
-        </View>
         <TextSection data={item} />
       </View>
     );
   };
 
   _renderCarousel = () => {
-    const {itemWidth, sliderWidth} = this._getWidth();
+    const { itemWidth, sliderWidth } = this._getWidth();
 
     return (
       <Carousel
@@ -133,24 +102,19 @@ class CategoryScreen extends React.Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
+      <MainView>
         {this.props.categoryData.length > 0
           ? this._renderCarousel()
           : this._renderLoading()}
-      </View>
+      </MainView>
     );
   }
 }
 
 // Export class so that you do not have to mount redux store in tests
-export {CategoryScreen};
+export { CategoryScreen };
 
 const styles = StyleSheet.create({
-  buttonRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginTop: 20,
-  },
   imageStyle: {
     height: 300,
     width: '100%',
@@ -161,8 +125,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = ({categoryData}) => ({
+const mapStateToProps = ({ categoryData }) => ({
   categoryData: categoryData.categoryData,
 });
 
-export default connect(mapStateToProps, {fetchCategoryData})(CategoryScreen);
+export default connect(mapStateToProps, { fetchCategoryData })(CategoryScreen);
