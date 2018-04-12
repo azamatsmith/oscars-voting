@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
-import { Button, MainView, Text } from 'src/common';
+import { Button, Loading, MainView, Text } from 'src/common';
 import { connect } from 'react-redux';
 import { fetchCategoryData } from 'src/actions';
 import ImageSection from './components/ImageSection';
@@ -80,7 +80,7 @@ class CategoryScreen extends React.Component {
     );
   };
 
-  _renderLoading = () => <Text>Loading</Text>;
+  _renderLoading = () => <Loading />;
 
   render() {
     return (

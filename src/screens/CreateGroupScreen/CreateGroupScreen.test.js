@@ -3,7 +3,6 @@ import CreateGroupScreen from './';
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-
 describe('<CreateGroupScreen />', () => {
   const props = {
     navigation: {
@@ -22,5 +21,4 @@ describe('<CreateGroupScreen />', () => {
     const groupId = shallowWrapper.instance()._randomGroupId();
     expect(groupId).toBeGreaterThan(0);
   });
-
 });
