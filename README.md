@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-1. Add an `env.js` to your root directory`
+1. Add an `env.js` to your root directory
 2. It should contain the `env` variables that will be used throughout the app and look like this:
 
 ```
