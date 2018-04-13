@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Carousel from 'react-native-snap-carousel';
 import { Dimensions, Image, StyleSheet, View } from 'react-native';
-import { MainView, Text } from 'src/common';
+import { Loading, MainView, Text } from 'src/common';
 import { connect } from 'react-redux';
 import { fetchCategoryData } from 'src/actions';
 import TextSection from './components/TextSection';
@@ -98,14 +98,14 @@ class CategoryScreen extends React.Component {
     );
   };
 
-  _renderLoading = () => <Text>Loading</Text>;
-
   render() {
     return (
       <MainView>
-        {this.props.categoryData.length > 0
-          ? this._renderCarousel()
-          : this._renderLoading()}
+        {this.props.categoryData.length > 0 ? (
+          this._renderCarousel()
+        ) : (
+          <Loading />
+        )}
       </MainView>
     );
   }
