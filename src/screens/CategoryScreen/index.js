@@ -31,7 +31,7 @@ class CategoryScreen extends React.Component {
   };
 
   static defaultProps = {
-    fetchCategoryData: () => null,
+    categoryData: [],
     navigation: {
       state: {
         params: {

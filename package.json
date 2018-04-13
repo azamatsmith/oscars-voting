@@ -19,8 +19,7 @@
   "scripts": {
     "android": "react-native-scripts android",
     "eject": "react-native-scripts eject",
-    "format":
-      "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
+    "format": "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\"",
     "ios": "react-native-scripts ios",
     "lint": "eslint .",
     "lint:fix": "eslint . --ext .js --fix",
@@ -32,10 +31,15 @@
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
-    "coverageReporters": ["lcov", "html"],
+    "coverageReporters": [
+      "lcov",
+      "html"
+    ],
     "preset": "react-native",
     "setupTestFrameworkScriptFile": "<rootDir>/src/utils/setupTests.js",
-    "testPathIgnorePatterns": ["<rootDir>/node_modules/"],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
     "transformIgnorePatterns": [
       "node_modules/(?!(react-native-safe-area-view|react-native-snap-carousel|react-native|react-navigation|react-navigation-redux-helpers)/)"
     ],
