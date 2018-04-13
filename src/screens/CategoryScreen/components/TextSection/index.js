@@ -26,7 +26,7 @@ export default class TextSection extends React.Component {
       if (supported) {
         Linking.openURL(link);
       } else {
-        console.log("Don't know how to open URI: " + link);
+        // console.log("Don't know how to open URI: " + link);
       }
     });
   };

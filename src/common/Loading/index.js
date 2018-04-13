@@ -18,7 +18,7 @@ export default class Loading extends React.Component {
     } else {
       return (
         <View style={[styles.container, styles.horizontal]}>
-          <ActivityIndicator size="large" color="#0000ff" />
+          <ActivityIndicator color="#0000ff" size="large" />
         </View>
       );
     }
